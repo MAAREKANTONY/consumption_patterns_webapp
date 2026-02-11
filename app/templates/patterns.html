@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head><title>Patterns</title></head>
+<body>
+<h2>Existing Patterns</h2>
+<ul>
+{% for p in patterns %}
+<li>{{p.name}} ({{p.country}})</li>
+{% endfor %}
+</ul>
+
+<h2>Add Pattern</h2>
+<form method="post" action="/patterns">
+Name: <input name="name"><br>
+Country: <input name="country"><br>
+JSON:<br>
+<textarea name="json_definition" rows="10" cols="60"></textarea><br>
+<button type="submit">Save</button>
+</form>
+</body>
+</html>
