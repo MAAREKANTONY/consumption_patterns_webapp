@@ -16,6 +16,13 @@ from core.signature import compute_outlet_signature
 from core.distance import score_against_patterns
 from core.decision import select_best_pattern
 
+# NOTE: Some blocks in this file reference `dims` / `pattern_db_id` as locals
+# in the pattern save flow. We define safe defaults here to prevent startup
+# crashes if those blocks are evaluated elsewhere (they are no-ops outside
+# pattern saving).
+dims = None
+pattern_db_id = None
+
 APP_ROOT = Path(__file__).resolve().parent.parent
 
 app = FastAPI(title="Consumption Patterns WebApp")
