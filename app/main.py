@@ -43,6 +43,21 @@ def ensure_default_countries():
     ]
     db = db_session()
     try:
+        # Decide which dimensions JSON to persist
+        if dims is None:
+            if pattern_db_id:
+                existing = db.query(PatternV2).filter(PatternV2.id == pattern_db_id).first()
+                dims_to_store = existing.dimensions_json if existing else json.dumps({
+                    "revenue_by_momentum": {},
+                    "category_mix_by_momentum": {}
+                })
+            else:
+                dims_to_store = json.dumps({
+                    "revenue_by_momentum": {},
+                    "category_mix_by_momentum": {}
+                })
+        else:
+            dims_to_store = json.dumps(dims, ensure_ascii=False)
         for code, label, tz in defaults:
             if not db.query(Country).filter(Country.code == code).first():
                 db.add(Country(code=code, label=label, timezone=tz))
@@ -85,6 +100,21 @@ def home(request: Request):
 def countries_page(request: Request):
     db = db_session()
     try:
+        # Decide which dimensions JSON to persist
+        if dims is None:
+            if pattern_db_id:
+                existing = db.query(PatternV2).filter(PatternV2.id == pattern_db_id).first()
+                dims_to_store = existing.dimensions_json if existing else json.dumps({
+                    "revenue_by_momentum": {},
+                    "category_mix_by_momentum": {}
+                })
+            else:
+                dims_to_store = json.dumps({
+                    "revenue_by_momentum": {},
+                    "category_mix_by_momentum": {}
+                })
+        else:
+            dims_to_store = json.dumps(dims, ensure_ascii=False)
         countries = db.query(Country).order_by(Country.code.asc()).all()
         return templates.TemplateResponse(
             "countries.html",
@@ -102,6 +132,21 @@ def upsert_country(
     code = code.strip().upper()
     db = db_session()
     try:
+        # Decide which dimensions JSON to persist
+        if dims is None:
+            if pattern_db_id:
+                existing = db.query(PatternV2).filter(PatternV2.id == pattern_db_id).first()
+                dims_to_store = existing.dimensions_json if existing else json.dumps({
+                    "revenue_by_momentum": {},
+                    "category_mix_by_momentum": {}
+                })
+            else:
+                dims_to_store = json.dumps({
+                    "revenue_by_momentum": {},
+                    "category_mix_by_momentum": {}
+                })
+        else:
+            dims_to_store = json.dumps(dims, ensure_ascii=False)
         c = db.query(Country).filter(Country.code == code).first()
         if c:
             c.label = label.strip()
@@ -117,6 +162,21 @@ def upsert_country(
 def delete_country(code: str):
     db = db_session()
     try:
+        # Decide which dimensions JSON to persist
+        if dims is None:
+            if pattern_db_id:
+                existing = db.query(PatternV2).filter(PatternV2.id == pattern_db_id).first()
+                dims_to_store = existing.dimensions_json if existing else json.dumps({
+                    "revenue_by_momentum": {},
+                    "category_mix_by_momentum": {}
+                })
+            else:
+                dims_to_store = json.dumps({
+                    "revenue_by_momentum": {},
+                    "category_mix_by_momentum": {}
+                })
+        else:
+            dims_to_store = json.dumps(dims, ensure_ascii=False)
         c = db.query(Country).filter(Country.code == code).first()
         if c:
             # patterns cascade is not set; delete patterns explicitly
@@ -133,6 +193,21 @@ def delete_country(code: str):
 def patterns_page(request: Request, country: Optional[str] = None):
     db = db_session()
     try:
+        # Decide which dimensions JSON to persist
+        if dims is None:
+            if pattern_db_id:
+                existing = db.query(PatternV2).filter(PatternV2.id == pattern_db_id).first()
+                dims_to_store = existing.dimensions_json if existing else json.dumps({
+                    "revenue_by_momentum": {},
+                    "category_mix_by_momentum": {}
+                })
+            else:
+                dims_to_store = json.dumps({
+                    "revenue_by_momentum": {},
+                    "category_mix_by_momentum": {}
+                })
+        else:
+            dims_to_store = json.dumps(dims, ensure_ascii=False)
         countries = db.query(Country).order_by(Country.code.asc()).all()
         selected = (country or (countries[0].code if countries else "FR")).upper()
 
@@ -159,6 +234,21 @@ def patterns_page(request: Request, country: Optional[str] = None):
 def pattern_new(request: Request, country: str = "FR"):
     db = db_session()
     try:
+        # Decide which dimensions JSON to persist
+        if dims is None:
+            if pattern_db_id:
+                existing = db.query(PatternV2).filter(PatternV2.id == pattern_db_id).first()
+                dims_to_store = existing.dimensions_json if existing else json.dumps({
+                    "revenue_by_momentum": {},
+                    "category_mix_by_momentum": {}
+                })
+            else:
+                dims_to_store = json.dumps({
+                    "revenue_by_momentum": {},
+                    "category_mix_by_momentum": {}
+                })
+        else:
+            dims_to_store = json.dumps(dims, ensure_ascii=False)
         countries = db.query(Country).order_by(Country.code.asc()).all()
         selected = country.strip().upper()
         empty_dims = {
@@ -182,6 +272,21 @@ def pattern_new(request: Request, country: str = "FR"):
 def pattern_edit(request: Request, pattern_db_id: int):
     db = db_session()
     try:
+        # Decide which dimensions JSON to persist
+        if dims is None:
+            if pattern_db_id:
+                existing = db.query(PatternV2).filter(PatternV2.id == pattern_db_id).first()
+                dims_to_store = existing.dimensions_json if existing else json.dumps({
+                    "revenue_by_momentum": {},
+                    "category_mix_by_momentum": {}
+                })
+            else:
+                dims_to_store = json.dumps({
+                    "revenue_by_momentum": {},
+                    "category_mix_by_momentum": {}
+                })
+        else:
+            dims_to_store = json.dumps(dims, ensure_ascii=False)
         countries = db.query(Country).order_by(Country.code.asc()).all()
         p = db.query(PatternV2).filter(PatternV2.id == pattern_db_id).first()
         if not p:
@@ -205,25 +310,46 @@ def pattern_save(
     country_code: str = Form(...),
     pattern_id: str = Form(...),
     label: str = Form(""),
-    dimensions_json: str = Form(...),
+    dimensions_json: Optional[str] = Form(None),
 ):
     country_code = country_code.strip().upper()
     pattern_id = pattern_id.strip()
 
-    # Validate JSON early (clear error page)
-    try:
-        dims = json.loads(dimensions_json)
-        # Basic shape check
-        assert "revenue_by_momentum" in dims and "category_mix_by_momentum" in dims
-    except Exception as e:
-        # Redirect back with a crude error flag (kept simple)
-        url = f"/patterns2/new?country={country_code}"
-        if pattern_db_id:
-            url = f"/patterns2/{pattern_db_id}/edit"
-        return RedirectResponse(url=url, status_code=303)
+    # If dimensions_json is missing, treat this as a "metadata-only" save.
+    # - On create: store an empty scaffold that matches expected shape.
+    # - On update: keep existing dimensions_json from DB.
+
+    # Validate JSON early (clear error page) when provided
+    if dimensions_json is not None:
+        try:
+            dims = json.loads(dimensions_json)
+            # Basic shape check
+            assert "revenue_by_momentum" in dims and "category_mix_by_momentum" in dims
+        except Exception:
+            url = f"/patterns2/new?country={country_code}"
+            if pattern_db_id:
+                url = f"/patterns2/{pattern_db_id}/edit"
+            return RedirectResponse(url=url, status_code=303)
+    else:
+        dims = None
 
     db = db_session()
     try:
+        # Decide which dimensions JSON to persist
+        if dims is None:
+            if pattern_db_id:
+                existing = db.query(PatternV2).filter(PatternV2.id == pattern_db_id).first()
+                dims_to_store = existing.dimensions_json if existing else json.dumps({
+                    "revenue_by_momentum": {},
+                    "category_mix_by_momentum": {}
+                })
+            else:
+                dims_to_store = json.dumps({
+                    "revenue_by_momentum": {},
+                    "category_mix_by_momentum": {}
+                })
+        else:
+            dims_to_store = json.dumps(dims, ensure_ascii=False)
         if pattern_db_id:
             p = db.query(PatternV2).filter(PatternV2.id == pattern_db_id).first()
             if not p:
@@ -231,13 +357,13 @@ def pattern_save(
             p.country_code = country_code
             p.pattern_id = pattern_id
             p.label = label.strip()
-            p.dimensions_json = json.dumps(dims, ensure_ascii=False)
+            p.dimensions_json = dims_to_store
         else:
             p = PatternV2(
                 country_code=country_code,
                 pattern_id=pattern_id,
                 label=label.strip(),
-                dimensions_json=json.dumps(dims, ensure_ascii=False),
+                dimensions_json=dims_to_store,
             )
             db.add(p)
         db.commit()
@@ -250,6 +376,21 @@ def pattern_save(
 def pattern_delete(pattern_db_id: int):
     db = db_session()
     try:
+        # Decide which dimensions JSON to persist
+        if dims is None:
+            if pattern_db_id:
+                existing = db.query(PatternV2).filter(PatternV2.id == pattern_db_id).first()
+                dims_to_store = existing.dimensions_json if existing else json.dumps({
+                    "revenue_by_momentum": {},
+                    "category_mix_by_momentum": {}
+                })
+            else:
+                dims_to_store = json.dumps({
+                    "revenue_by_momentum": {},
+                    "category_mix_by_momentum": {}
+                })
+        else:
+            dims_to_store = json.dumps(dims, ensure_ascii=False)
         p = db.query(PatternV2).filter(PatternV2.id == pattern_db_id).first()
         country = p.country_code if p else "FR"
         if p:
@@ -269,6 +410,21 @@ def seed_fr():
     data = json.loads(seed_path.read_text(encoding="utf-8"))
     db = db_session()
     try:
+        # Decide which dimensions JSON to persist
+        if dims is None:
+            if pattern_db_id:
+                existing = db.query(PatternV2).filter(PatternV2.id == pattern_db_id).first()
+                dims_to_store = existing.dimensions_json if existing else json.dumps({
+                    "revenue_by_momentum": {},
+                    "category_mix_by_momentum": {}
+                })
+            else:
+                dims_to_store = json.dumps({
+                    "revenue_by_momentum": {},
+                    "category_mix_by_momentum": {}
+                })
+        else:
+            dims_to_store = json.dumps(dims, ensure_ascii=False)
         for item in data:
             if item.get("country_profile") != "FR":
                 continue
@@ -303,6 +459,21 @@ def seed_fr():
 def run_page(request: Request, country: Optional[str] = None):
     db = db_session()
     try:
+        # Decide which dimensions JSON to persist
+        if dims is None:
+            if pattern_db_id:
+                existing = db.query(PatternV2).filter(PatternV2.id == pattern_db_id).first()
+                dims_to_store = existing.dimensions_json if existing else json.dumps({
+                    "revenue_by_momentum": {},
+                    "category_mix_by_momentum": {}
+                })
+            else:
+                dims_to_store = json.dumps({
+                    "revenue_by_momentum": {},
+                    "category_mix_by_momentum": {}
+                })
+        else:
+            dims_to_store = json.dumps(dims, ensure_ascii=False)
         countries = db.query(Country).order_by(Country.code.asc()).all()
         selected = (country or (countries[0].code if countries else "FR")).upper()
         patterns_count = db.query(PatternV2).filter(PatternV2.country_code == selected).count()
@@ -335,6 +506,21 @@ async def run_score(
 
     db = db_session()
     try:
+        # Decide which dimensions JSON to persist
+        if dims is None:
+            if pattern_db_id:
+                existing = db.query(PatternV2).filter(PatternV2.id == pattern_db_id).first()
+                dims_to_store = existing.dimensions_json if existing else json.dumps({
+                    "revenue_by_momentum": {},
+                    "category_mix_by_momentum": {}
+                })
+            else:
+                dims_to_store = json.dumps({
+                    "revenue_by_momentum": {},
+                    "category_mix_by_momentum": {}
+                })
+        else:
+            dims_to_store = json.dumps(dims, ensure_ascii=False)
         countries = db.query(Country).order_by(Country.code.asc()).all()
         c = db.query(Country).filter(Country.code == country_code).first()
         tz = c.timezone if c else "UTC"
