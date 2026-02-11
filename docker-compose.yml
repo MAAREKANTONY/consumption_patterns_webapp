@@ -20,6 +20,10 @@ services:
       - "127.0.0.1:8002:8000"
     environment:
       DATABASE_URL: postgresql://patterns:patterns@db:5432/patterns
+      UPLOAD_DIR: /data/uploads
+    volumes:
+      - uploads_data:/data/uploads
 
 volumes:
   postgres_data:
+  uploads_data:

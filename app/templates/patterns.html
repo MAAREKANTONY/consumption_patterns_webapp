@@ -1,21 +1,46 @@
 <!DOCTYPE html>
 <html>
-<head><title>Patterns</title></head>
+<head>
+  <title>Patterns</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 30px; }
+    table { border-collapse: collapse; width: 100%; }
+    th, td { border-bottom: 1px solid #eee; padding: 8px; text-align: left; vertical-align: top; }
+    textarea { width: 100%; font-family: monospace; }
+  </style>
+</head>
 <body>
-<h2>Existing Patterns</h2>
-<ul>
-{% for p in patterns %}
-<li>{{p.name}} ({{p.country}})</li>
-{% endfor %}
-</ul>
+  <h2>Patterns</h2>
+  <p><a href="/">Home</a></p>
 
-<h2>Add Pattern</h2>
-<form method="post" action="/patterns">
-Name: <input name="name"><br>
-Country: <input name="country"><br>
-JSON:<br>
-<textarea name="json_definition" rows="10" cols="60"></textarea><br>
-<button type="submit">Save</button>
-</form>
+  <table>
+    <thead>
+      <tr>
+        <th>Country</th>
+        <th>Pattern ID</th>
+        <th>Label</th>
+      </tr>
+    </thead>
+    <tbody>
+    {% for p in patterns %}
+      <tr>
+        <td>{{ p.country_profile }}</td>
+        <td><strong>{{ p.pattern_id }}</strong></td>
+        <td>{{ p.label }}</td>
+      </tr>
+    {% endfor %}
+    </tbody>
+  </table>
+
+  <h3>Add pattern (1 row = 1 pattern)</h3>
+  <form method="post" action="/patterns">
+    <p>Country (e.g. FR):<br><input name="country_profile" value="FR"></p>
+    <p>Pattern ID (e.g. fast_food):<br><input name="pattern_id"></p>
+    <p>Label:<br><input name="label"></p>
+    <p>JSON definition (paste 1 pattern object):<br>
+      <textarea name="json_definition" rows="16"></textarea>
+    </p>
+    <button type="submit">Save</button>
+  </form>
 </body>
 </html>

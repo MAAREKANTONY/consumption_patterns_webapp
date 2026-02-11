@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Import & Run</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 30px; }
+    code { background: #f4f4f4; padding: 2px 5px; border-radius: 4px; }
+  </style>
+</head>
+<body>
+  <h2>Import sales CSV & run scoring</h2>
+  <p><a href="/">Home</a></p>
+
+  <p><strong>Expected CSV columns:</strong><br>
+    <code>fyre_id,product_name,cat0,cat1,cat2,price,quantity,datetime</code>
+  </p>
+  <p><strong>datetime format:</strong> <code>YYYY-MM-DD HH:MM:SS UTC</code> (converted to country timezone)</p>
+
+  <form method="post" action="/import" enctype="multipart/form-data">
+    <p>Country profile:
+      <select name="country_profile">
+        <option value="FR" selected>FR</option>
+        <option value="UK">UK</option>
+        <option value="ES">ES</option>
+        <option value="IL">IL</option>
+      </select>
+    </p>
+    <p>CSV file: <input type="file" name="file" accept=".csv" required></p>
+    <button type="submit">Run</button>
+  </form>
+</body>
+</html>

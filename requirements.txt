@@ -5,7 +5,3 @@ psycopg2-binary
 jinja2
 python-multipart
 pydantic
-
-# Import ventes (CSV/XLSX)
-pandas
-openpyxl

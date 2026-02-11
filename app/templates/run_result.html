@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Run result</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 30px; }
+    .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+    .card { border: 1px solid #eee; border-radius: 10px; padding: 14px; }
+    table { width: 100%; border-collapse: collapse; }
+    th, td { border-bottom: 1px solid #eee; padding: 8px; text-align: left; }
+    pre { background: #f7f7f7; padding: 10px; border-radius: 8px; overflow: auto; }
+  </style>
+</head>
+<body>
+  <h2>Results</h2>
+  <p><a href="/">Home</a> · <a href="/import">New import</a> · <a href="/patterns">Patterns</a></p>
+
+  <p><strong>Country:</strong> {{ run.country_profile }}<br>
+     <strong>Selected:</strong> {{ run.selected_pattern_id or "UNCLASSIFIABLE" }}</p>
+
+  <div class="grid">
+    <div class="card">
+      <h3>Data quality</h3>
+      <pre>{{ signature.get("stats", {}) | tojson(indent=2) }}</pre>
+
+      <h3>Signature (dimensions)</h3>
+      <pre>{{ {"revenue_by_momentum": signature.get("revenue_by_momentum", {}), "category_mix_by_momentum": signature.get("category_mix_by_momentum", {})} | tojson(indent=2) }}</pre>
+    </div>
+
+    <div class="card">
+      <h3>Closest patterns (euclidean distance)</h3>
+      <table>
+        <thead><tr><th>Pattern</th><th>Distance</th><th>Prob.</th></tr></thead>
+        <tbody>
+        {% for s in scores %}
+          <tr>
+            <td><strong>{{ s.pattern_id }}</strong><br><small>{{ s.label }}</small></td>
+            <td>{{ "%.6f"|format(s.distance) if s.distance != float("inf") else "inf" }}</td>
+            <td>{{ "%.3f"|format(s.probability or 0.0) }}</td>
+          </tr>
+        {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</body>
+</html>
