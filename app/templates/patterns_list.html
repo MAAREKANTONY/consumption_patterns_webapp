@@ -1,0 +1,74 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="d-flex align-items-center justify-content-between mb-3">
+  <div>
+    <h1 class="h4 mb-1">Patterns</h1>
+    <div class="text-muted">Patterns stockés en base, groupés par pays.</div>
+  </div>
+  <a class="btn btn-primary" href="/patterns/new">+ Nouveau pattern</a>
+</div>
+
+<div class="card p-3 mb-3">
+  <form class="row g-2 align-items-end" method="get" action="/patterns">
+    <div class="col-md-4">
+      <label class="form-label">Filtrer par pays</label>
+      <select class="form-select" name="country">
+        <option value="" {% if not country %}selected{% endif %}>Tous les pays</option>
+        {% for c in countries %}
+          <option value="{{ c }}" {% if country == c %}selected{% endif %}>{{ c }}</option>
+        {% endfor %}
+      </select>
+    </div>
+    <div class="col-md-2">
+      <button class="btn btn-dark w-100" type="submit">Appliquer</button>
+    </div>
+  </form>
+</div>
+
+<div class="card p-3">
+  <div class="table-responsive">
+    <table class="table table-hover align-middle mb-0">
+      <thead>
+        <tr>
+          <th style="width: 80px;">ID</th>
+          <th>Pays</th>
+          <th>Nom</th>
+          <th>Définition</th>
+          <th style="width: 220px;">Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for p in patterns %}
+          <tr>
+            <td class="text-muted">{{ p.id }}</td>
+            <td><span class="badge text-bg-secondary">{{ p.country }}</span></td>
+            <td><strong>{{ p.name }}</strong></td>
+            <td>
+              <div class="mono text-muted" style="max-width: 520px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">
+                {{ p.json_definition }}
+              </div>
+            </td>
+            <td>
+              <a class="btn btn-sm btn-outline-primary" href="/patterns/{{ p.id }}/edit">Éditer</a>
+              <form method="post" action="/patterns/{{ p.id }}/delete" style="display:inline" onsubmit="return confirm('Supprimer ce pattern ?');">
+                <button class="btn btn-sm btn-outline-danger" type="submit">Supprimer</button>
+              </form>
+            </td>
+          </tr>
+        {% else %}
+          <tr>
+            <td colspan="5" class="text-center text-muted py-4">Aucun pattern. Crée ton premier pattern.</td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<div class="mt-3 text-muted" style="font-size:.95rem;">
+  <div><strong>Format recommandé :</strong></div>
+  <div class="mono">{"features": {"beer": 0.25, "wine": 0.10, "water": 0.15, "food": 0.50}}</div>
+  <div>(Les valeurs sont normalisées automatiquement.)</div>
+</div>
+{% endblock %}

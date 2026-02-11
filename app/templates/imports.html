@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="d-flex align-items-center justify-content-between mb-3">
+  <div>
+    <h1 class="h4 mb-1">Import ventes</h1>
+    <div class="text-muted">Upload CSV/XLSX, sélection du pays + mapping des colonnes, puis scoring automatique.</div>
+  </div>
+  <a class="btn btn-outline-secondary" href="/patterns">Gérer les patterns</a>
+</div>
+
+<div class="card p-3">
+  <form method="post" action="/imports/preview" enctype="multipart/form-data" class="row g-3">
+    <div class="col-md-4">
+      <label class="form-label">Pays de travail</label>
+      <select class="form-select" name="country" required>
+        <option value="" disabled selected>Choisir…</option>
+        {% for c in countries %}
+          <option value="{{ c }}">{{ c }}</option>
+        {% endfor %}
+      </select>
+      <div class="form-text">Les distances seront calculées contre les patterns de ce pays.</div>
+    </div>
+
+    <div class="col-md-8">
+      <label class="form-label">Fichier ventes (CSV ou XLSX)</label>
+      <input class="form-control" type="file" name="file" accept=".csv,.xlsx,.xls" required>
+      <div class="form-text">Étape suivante : aperçu + choix colonne “catégorie” + colonne “valeur”.</div>
+    </div>
+
+    <div class="col-12">
+      <button class="btn btn-primary" type="submit">Continuer</button>
+    </div>
+  </form>
+</div>
+
+<div class="mt-3 text-muted" style="font-size:.95rem;">
+  <div class="fw-semibold">Attendu côté fichier</div>
+  <ul class="mb-0">
+    <li>Une colonne “catégorie” (ex: category, categorie, product, item…).</li>
+    <li>Une colonne numérique (CA, quantité, revenue…).</li>
+  </ul>
+</div>
+{% endblock %}

@@ -1,8 +1,28 @@
-<!DOCTYPE html>
-<html>
-<head><title>Consumption Patterns</title></head>
-<body>
-<h1>Consumption Patterns App</h1>
-<a href="/patterns">Manage Patterns</a>
-</body>
-</html>
+{% extends "base.html" %}
+
+{% block content %}
+<div class="row g-4">
+  <div class="col-12">
+    <div class="card p-4">
+      <h1 class="h3 mb-2">Consumption Patterns WebApp</h1>
+      <p class="text-muted mb-0">Définis des patterns par pays, puis importe des ventes (CSV/XLSX) pour calculer la distance aux patterns du pays sélectionné.</p>
+    </div>
+  </div>
+
+  <div class="col-md-6">
+    <div class="card p-4 h-100">
+      <h2 class="h5">1) Patterns (par pays)</h2>
+      <p class="text-muted">CRUD complet : créer / éditer / supprimer. Stockage en PostgreSQL.</p>
+      <a class="btn btn-dark" href="/patterns">Gérer les patterns</a>
+    </div>
+  </div>
+
+  <div class="col-md-6">
+    <div class="card p-4 h-100">
+      <h2 class="h5">2) Import ventes</h2>
+      <p class="text-muted">Upload CSV/XLSX, sélection des colonnes (catégorie + valeur), signature normalisée, scoring vs patterns du pays.</p>
+      <a class="btn btn-primary" href="/imports">Importer des ventes</a>
+    </div>
+  </div>
+</div>
+{% endblock %}

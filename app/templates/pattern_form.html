@@ -1,0 +1,117 @@
+{% extends "base.html" %}
+
+{% set is_edit = (mode == 'edit') %}
+
+{% block content %}
+<div class="d-flex align-items-center justify-content-between mb-3">
+  <div>
+    <h1 class="h4 mb-1">{{ 'Éditer' if is_edit else 'Nouveau' }} pattern</h1>
+    <div class="text-muted">Saisie guidée : éditeur tableau + JSON final stocké en base.</div>
+  </div>
+  <a class="btn btn-outline-secondary" href="/patterns">Retour</a>
+</div>
+
+<div class="row g-4">
+  <div class="col-lg-5">
+    <div class="card p-3">
+      <form method="post" action="{{ '/patterns/' ~ pattern.id ~ '/edit' if is_edit else '/patterns/new' }}">
+        <div class="mb-3">
+          <label class="form-label">Pays (ISO2 recommandé)</label>
+          <input class="form-control" name="country" placeholder="FR" value="{{ (pattern.country if pattern else '') }}" required>
+          <div class="form-text">Ex: FR, NL, DE, UK… (on stocke en MAJUSCULE).</div>
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label">Nom du pattern</label>
+          <input class="form-control" name="name" placeholder="On-trade urban" value="{{ (pattern.name if pattern else '') }}" required>
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label">Définition JSON (stockée)</label>
+          <textarea class="form-control mono" rows="10" name="features_json" id="features_json" placeholder='{"features": {"beer": 0.25, "wine": 0.10}}'>{{ (pattern.json_definition if pattern else '{"features": {}}') }}</textarea>
+          <div class="form-text">Tu peux éditer le JSON directement ou utiliser l’éditeur tableau à droite.</div>
+        </div>
+
+        <button class="btn btn-primary" type="submit">{{ 'Enregistrer' if is_edit else 'Créer' }}</button>
+      </form>
+    </div>
+  </div>
+
+  <div class="col-lg-7">
+    <div class="card p-3">
+      <div class="d-flex align-items-center justify-content-between mb-2">
+        <h2 class="h6 mb-0">Éditeur tableau (features)</h2>
+        <div>
+          <button class="btn btn-sm btn-outline-dark" type="button" onclick="loadFromJson()">Charger depuis JSON</button>
+          <button class="btn btn-sm btn-dark" type="button" onclick="syncToJson()">Générer JSON</button>
+        </div>
+      </div>
+
+      <div class="table-responsive">
+        <table class="table table-sm align-middle" id="features_table">
+          <thead>
+            <tr>
+              <th style="width: 55%">Feature (ex: beer, wine, water…)</th>
+              <th style="width: 35%">Valeur (poids)</th>
+              <th style="width: 10%"></th>
+            </tr>
+          </thead>
+          <tbody>
+          </tbody>
+        </table>
+      </div>
+
+      <button class="btn btn-outline-primary" type="button" onclick="addRow('', '')">+ Ajouter une feature</button>
+
+      <hr>
+      <div class="text-muted" style="font-size:.95rem;">
+        <div class="fw-semibold">Règles</div>
+        <ul class="mb-0">
+          <li>Le système normalise automatiquement (somme = 1).</li>
+          <li>Les clés sont stockées en minuscule, trim.</li>
+          <li>Le scoring utilise une distance euclidienne sur l’union des features.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  function addRow(k, v) {
+    const tbody = document.querySelector('#features_table tbody');
+    const tr = document.createElement('tr');
+    tr.innerHTML = `
+      <td><input class="form-control form-control-sm" placeholder="beer" value="${(k||'').replaceAll('"','&quot;')}"></td>
+      <td><input class="form-control form-control-sm" placeholder="0.25" value="${v ?? ''}"></td>
+      <td class="text-end"><button class="btn btn-sm btn-outline-danger" type="button">✕</button></td>
+    `;
+    tr.querySelector('button').onclick = () => tr.remove();
+    tbody.appendChild(tr);
+  }
+
+  function loadFromJson() {
+    const txt = document.getElementById('features_json').value || '{}';
+    let obj;
+    try { obj = JSON.parse(txt); } catch (e) { alert('JSON invalide'); return; }
+    const features = (obj && obj.features && typeof obj.features === 'object') ? obj.features : obj;
+    const tbody = document.querySelector('#features_table tbody');
+    tbody.innerHTML = '';
+    Object.keys(features || {}).forEach(k => addRow(k, features[k]));
+    if (!Object.keys(features || {}).length) addRow('', '');
+  }
+
+  function syncToJson() {
+    const rows = Array.from(document.querySelectorAll('#features_table tbody tr'));
+    const features = {};
+    rows.forEach(r => {
+      const k = (r.children[0].querySelector('input').value || '').trim().toLowerCase();
+      const v = parseFloat((r.children[1].querySelector('input').value || '').trim());
+      if (k && !Number.isNaN(v) && v >= 0) features[k] = v;
+    });
+    document.getElementById('features_json').value = JSON.stringify({features}, null, 2);
+  }
+
+  // Init editor
+  loadFromJson();
+</script>
+{% endblock %}

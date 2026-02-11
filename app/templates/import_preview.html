@@ -1,0 +1,75 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="d-flex align-items-center justify-content-between mb-3">
+  <div>
+    <h1 class="h4 mb-1">Mapping fichier</h1>
+    <div class="text-muted">{{ filename }} · Pays: <span class="badge text-bg-secondary">{{ country }}</span></div>
+  </div>
+  <a class="btn btn-outline-secondary" href="/imports">Retour</a>
+</div>
+
+<div class="row g-4">
+  <div class="col-lg-4">
+    <div class="card p-3">
+      <form method="post" action="/imports/compute">
+        <input type="hidden" name="country" value="{{ country }}">
+        <input type="hidden" name="upload_id" value="{{ upload_id }}">
+
+        <div class="mb-3">
+          <label class="form-label">Colonne catégorie</label>
+          <select class="form-select" name="category_col" required>
+            {% for c in columns %}
+              <option value="{{ c }}" {% if c==category_guess %}selected{% endif %}>{{ c }}</option>
+            {% endfor %}
+          </select>
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label">Colonne valeur</label>
+          <select class="form-select" name="value_col" required>
+            {% for c in columns %}
+              <option value="{{ c }}" {% if c==value_guess %}selected{% endif %}>{{ c }}</option>
+            {% endfor %}
+          </select>
+          <div class="form-text">Cette colonne doit être numérique (CA, qty, volume…).</div>
+        </div>
+
+        <button class="btn btn-primary" type="submit">Calculer signature & distances</button>
+      </form>
+    </div>
+  </div>
+
+  <div class="col-lg-8">
+    <div class="card p-3">
+      <div class="d-flex align-items-center justify-content-between mb-2">
+        <div>
+          <div class="fw-semibold">Aperçu (15 premières lignes)</div>
+          <div class="text-muted" style="font-size:.95rem;">Vérifie que les colonnes existent et que la colonne valeur est bien numérique.</div>
+        </div>
+      </div>
+
+      <div class="table-responsive">
+        <table class="table table-sm table-striped mb-0">
+          <thead>
+            <tr>
+              {% for c in columns %}
+                <th>{{ c }}</th>
+              {% endfor %}
+            </tr>
+          </thead>
+          <tbody>
+            {% for r in preview_rows %}
+              <tr>
+                {% for c in columns %}
+                  <td>{{ r[c] }}</td>
+                {% endfor %}
+              </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
