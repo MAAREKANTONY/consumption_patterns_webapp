@@ -1,0 +1,63 @@
+{% extends "base.html" %}
+{% set title = "Patterns — Consumption Patterns" %}
+{% set active = "patterns" %}
+{% block content %}
+
+<div class="d-flex align-items-center justify-content-between mb-3">
+  <h4 class="mb-0">Patterns</h4>
+  <div class="d-flex gap-2">
+    <form method="get" action="/patterns2" class="d-flex gap-2">
+      <select name="country" class="form-select form-select-sm" onchange="this.form.submit()">
+        {% for c in countries %}
+          <option value="{{ c.code }}" {% if c.code==selected_country %}selected{% endif %}>{{ c.code }} — {{ c.label }}</option>
+        {% endfor %}
+      </select>
+    </form>
+    <a class="btn btn-sm btn-primary" href="/patterns2/new?country={{ selected_country }}">New pattern</a>
+  </div>
+</div>
+
+<div class="card shadow-sm">
+  <div class="card-body">
+    <div class="d-flex justify-content-between align-items-center mb-3">
+      <div class="text-muted">Country: <strong>{{ selected_country }}</strong></div>
+      {% if selected_country == "FR" %}
+        <form method="post" action="/patterns2/seed/fr" style="display:inline">
+          <button class="btn btn-sm btn-outline-secondary">Seed FR sample patterns</button>
+        </form>
+      {% endif %}
+    </div>
+
+    {% if patterns|length == 0 %}
+      <div class="text-muted">No patterns yet for this country.</div>
+    {% else %}
+      <div class="table-responsive">
+        <table class="table table-sm align-middle">
+          <thead>
+            <tr>
+              <th>pattern_id</th>
+              <th>label</th>
+              <th class="text-end">Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for p in patterns %}
+              <tr>
+                <td class="mono">{{ p.pattern_id }}</td>
+                <td>{{ p.label }}</td>
+                <td class="text-end">
+                  <a class="btn btn-sm btn-outline-primary" href="/patterns2/{{ p.id }}/edit">Edit</a>
+                  <form method="post" action="/patterns2/{{ p.id }}/delete" onsubmit="return confirm('Delete pattern {{ p.pattern_id }}?')" style="display:inline">
+                    <button class="btn btn-sm btn-outline-danger">Delete</button>
+                  </form>
+                </td>
+              </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+    {% endif %}
+  </div>
+</div>
+
+{% endblock %}

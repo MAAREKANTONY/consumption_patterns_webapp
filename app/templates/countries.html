@@ -1,0 +1,66 @@
+{% extends "base.html" %}
+{% set title = "Countries — Consumption Patterns" %}
+{% set active = "countries" %}
+{% block content %}
+
+<div class="d-flex align-items-center justify-content-between mb-3">
+  <h4 class="mb-0">Countries</h4>
+</div>
+
+<div class="row g-3">
+  <div class="col-12 col-lg-5">
+    <div class="card shadow-sm">
+      <div class="card-body">
+        <h6 class="card-title mb-3">Add / update a country</h6>
+        <form method="post" action="/countries" class="vstack gap-3">
+          <div>
+            <label class="form-label">Code</label>
+            <input name="code" class="form-control" placeholder="FR" required>
+          </div>
+          <div>
+            <label class="form-label">Label</label>
+            <input name="label" class="form-control" placeholder="France">
+          </div>
+          <div>
+            <label class="form-label">Timezone</label>
+            <input name="timezone" class="form-control" placeholder="Europe/Paris" value="UTC">
+            <div class="form-text">Uses IANA timezone names (e.g. Asia/Jerusalem).</div>
+          </div>
+          <button class="btn btn-primary">Save</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-12 col-lg-7">
+    <div class="card shadow-sm">
+      <div class="card-body">
+        <h6 class="card-title mb-3">Configured</h6>
+        <div class="table-responsive">
+          <table class="table table-sm align-middle">
+            <thead>
+              <tr><th>Code</th><th>Label</th><th>Timezone</th><th class="text-end">Actions</th></tr>
+            </thead>
+            <tbody>
+              {% for c in countries %}
+                <tr>
+                  <td class="mono">{{ c.code }}</td>
+                  <td>{{ c.label }}</td>
+                  <td class="mono">{{ c.timezone }}</td>
+                  <td class="text-end">
+                    <form method="post" action="/countries/{{ c.code }}/delete" onsubmit="return confirm('Delete country {{ c.code }} and all its patterns?')" style="display:inline">
+                      <button class="btn btn-sm btn-outline-danger">Delete</button>
+                    </form>
+                  </td>
+                </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+        </div>
+        <div class="text-muted small">Default countries are auto-seeded on first run.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

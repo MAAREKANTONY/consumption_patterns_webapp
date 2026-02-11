@@ -5,3 +5,5 @@ psycopg2-binary
 jinja2
 python-multipart
 pydantic
+pandas
+openpyxl

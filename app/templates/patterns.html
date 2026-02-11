@@ -1,46 +1,25 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Patterns</title>
-  <style>
-    body { font-family: Arial, sans-serif; margin: 30px; }
-    table { border-collapse: collapse; width: 100%; }
-    th, td { border-bottom: 1px solid #eee; padding: 8px; text-align: left; vertical-align: top; }
-    textarea { width: 100%; font-family: monospace; }
-  </style>
+    <title>Patterns</title>
 </head>
 <body>
-  <h2>Patterns</h2>
-  <p><a href="/">Home</a></p>
-
-  <table>
-    <thead>
-      <tr>
-        <th>Country</th>
-        <th>Pattern ID</th>
-        <th>Label</th>
-      </tr>
-    </thead>
-    <tbody>
+    <h2>Existing Patterns</h2>
+    <ul>
     {% for p in patterns %}
-      <tr>
-        <td>{{ p.country_profile }}</td>
-        <td><strong>{{ p.pattern_id }}</strong></td>
-        <td>{{ p.label }}</td>
-      </tr>
+        <li><strong>{{ p.name }}</strong> ({{ p.country }})</li>
     {% endfor %}
-    </tbody>
-  </table>
+    </ul>
 
-  <h3>Add pattern (1 row = 1 pattern)</h3>
-  <form method="post" action="/patterns">
-    <p>Country (e.g. FR):<br><input name="country_profile" value="FR"></p>
-    <p>Pattern ID (e.g. fast_food):<br><input name="pattern_id"></p>
-    <p>Label:<br><input name="label"></p>
-    <p>JSON definition (paste 1 pattern object):<br>
-      <textarea name="json_definition" rows="16"></textarea>
-    </p>
-    <button type="submit">Save</button>
-  </form>
+    <h2>Add Pattern</h2>
+    <form method="post" action="/patterns">
+        Name:<br>
+        <input name="name"><br><br>
+        Country:<br>
+        <input name="country"><br><br>
+        JSON Definition:<br>
+        <textarea name="json_definition" rows="10" cols="70"></textarea><br><br>
+        <button type="submit">Save</button>
+    </form>
 </body>
 </html>

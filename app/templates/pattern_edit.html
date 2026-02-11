@@ -1,0 +1,79 @@
+{% extends "base.html" %}
+{% set title = "Edit pattern — Consumption Patterns" %}
+{% set active = "patterns" %}
+{% block content %}
+
+<div class="d-flex align-items-center justify-content-between mb-3">
+  <h4 class="mb-0">{% if pattern %}Edit pattern{% else %}New pattern{% endif %}</h4>
+  <a class="btn btn-sm btn-outline-secondary" href="/patterns2?country={{ selected_country }}">Back</a>
+</div>
+
+<div class="row g-3">
+  <div class="col-12 col-lg-5">
+    <div class="card shadow-sm">
+      <div class="card-body">
+        <h6 class="card-title mb-3">Metadata</h6>
+
+        <form method="post" action="/patterns2/save" class="vstack gap-3">
+          {% if pattern %}
+            <input type="hidden" name="pattern_db_id" value="{{ pattern.id }}">
+          {% endif %}
+
+          <div>
+            <label class="form-label">Country</label>
+            <select name="country_code" class="form-select" required>
+              {% for c in countries %}
+                <option value="{{ c.code }}" {% if c.code==selected_country %}selected{% endif %}>{{ c.code }} — {{ c.label }}</option>
+              {% endfor %}
+            </select>
+          </div>
+
+          <div>
+            <label class="form-label">pattern_id</label>
+            <input name="pattern_id" class="form-control mono" value="{{ pattern.pattern_id if pattern else '' }}" placeholder="e.g. cafe_bar" required>
+            <div class="form-text">This is the canonical identifier used by scoring (shown in results).</div>
+          </div>
+
+          <div>
+            <label class="form-label">Label</label>
+            <input name="label" class="form-control" value="{{ pattern.label if pattern else '' }}" placeholder="e.g. Café / Bar">
+          </div>
+
+          <button class="btn btn-primary">Save</button>
+        </form>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="col-12 col-lg-7">
+    <div class="card shadow-sm">
+      <div class="card-body">
+        <h6 class="card-title mb-3">Dimensions (JSON)</h6>
+        <form method="post" action="/patterns2/save" class="vstack gap-2">
+          {% if pattern %}
+            <input type="hidden" name="pattern_db_id" value="{{ pattern.id }}">
+            <input type="hidden" name="country_code" value="{{ selected_country }}">
+            <input type="hidden" name="pattern_id" value="{{ pattern.pattern_id }}">
+            <input type="hidden" name="label" value="{{ pattern.label }}">
+          {% else %}
+            <input type="hidden" name="country_code" value="{{ selected_country }}">
+            <input type="hidden" name="pattern_id" value="">
+            <input type="hidden" name="label" value="">
+            <div class="alert alert-info">
+              Fill metadata on the left, then save. (Or you can paste JSON here after creating.)
+            </div>
+          {% endif %}
+
+          <textarea name="dimensions_json" class="form-control mono" spellcheck="false">{{ dimensions_json }}</textarea>
+          <div class="form-text">
+            Expected shape: <span class="mono">{"revenue_by_momentum": {...}, "category_mix_by_momentum": {...}}</span>
+          </div>
+          <button class="btn btn-outline-primary">Save JSON</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

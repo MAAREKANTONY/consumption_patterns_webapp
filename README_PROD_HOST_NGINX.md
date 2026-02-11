@@ -14,3 +14,45 @@ docker compose up -d --build
 Update:
 git pull
 docker compose up -d --build
+
+
+---
+
+## v1.2 (CLI-aligned) — Patterns by country + Sales import (CSV/XLSX)
+
+This WebApp now embeds the exact same scoring logic as the CLI:
+
+- Outlet signature computation: `core.signature.compute_outlet_signature`
+- Scoring vs patterns: `core.distance.score_against_patterns`
+- Best pattern selection: `core.decision.select_best_pattern`
+
+### Pages
+
+- `/countries` : manage country profiles (timezone used to compute momenta)
+- `/patterns2` : CRUD patterns per country (same JSON "dimensions" structure as CLI patterns files)
+- `/run` : upload a sales file (CSV or XLSX) + select country, then compute:
+  - DATA QUALITY stats
+  - PATTERN PROBABILITIES (normalized)
+  - SELECTED pattern
+
+### Sales file expected columns (same as CLI loader)
+
+- Datetime:
+  - `datetime` or `purchase_datetime` (ISO or `YYYY-MM-DD HH:MM:SS UTC`)
+  - OR `purchase_date` + `purchase_hour`
+- Price & quantity:
+  - `price` + `quantity`
+  - OR `unit_price` + `qty` (fallback)
+- Taxonomy (strict, no guessing):
+  - `cat0/cat1/cat2`
+  - OR `category0/category1/category2`
+  - OR `category_produit0/category_produit1/category_produit2`
+
+### Pattern JSON structure
+
+Each Pattern stores **dimensions** only:
+
+- `revenue_by_momentum`: shares over `breakfast,lunch,coffee,apero,dinner,after`
+- `category_mix_by_momentum`: per momentum, shares over `food,hot,soft,beer,wine,spirits`
+
+A sample FR patterns file is included at `seeds/patterns_fr.json` and can be imported from the UI.

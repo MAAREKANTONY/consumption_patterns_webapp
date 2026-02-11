@@ -1,0 +1,109 @@
+{% extends "base.html" %}
+{% set title = "Run — Consumption Patterns" %}
+{% set active = "run" %}
+{% block content %}
+
+<div class="row g-3">
+  <div class="col-12 col-lg-5">
+    <div class="card shadow-sm">
+      <div class="card-body">
+        <h5 class="card-title mb-3">Compute outlet pattern</h5>
+
+        <form method="post" action="/run" enctype="multipart/form-data" class="vstack gap-3">
+          <div>
+            <label class="form-label">Country profile</label>
+            <select name="country_code" class="form-select" required>
+              {% for c in countries %}
+                <option value="{{ c.code }}" {% if c.code==selected_country %}selected{% endif %}>
+                  {{ c.code }} — {{ c.label }} ({{ c.timezone }})
+                </option>
+              {% endfor %}
+            </select>
+            <div class="form-text">Patterns configured for this country: <strong>{{ patterns_count }}</strong></div>
+          </div>
+
+          <div>
+            <label class="form-label">Sales file (CSV or XLSX)</label>
+            <input type="file" name="sales_file" class="form-control" accept=".csv,.xlsx,.xls" required>
+            <div class="form-text">Expected columns: datetime/purchase_datetime or (purchase_date+purchase_hour), price+quantity, and taxonomy cat0/cat1/cat2 (or category_produit0/1/2).</div>
+          </div>
+
+          <button class="btn btn-primary">Run scoring</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-12 col-lg-7">
+    <div class="card shadow-sm">
+      <div class="card-body">
+        <h5 class="card-title mb-3">Result</h5>
+
+        {% if result is none %}
+          <div class="text-muted">Upload a sales file to compute the signature and match it against country patterns.</div>
+        {% else %}
+          <div class="row g-3">
+            <div class="col-12">
+              <div class="alert {% if result.message %}alert-warning{% else %}alert-success{% endif %}">
+                {% if result.message %}
+                  <strong>{{ result.message }}</strong>
+                {% else %}
+                  <strong>SELECTED:</strong> {{ result.selected }}
+                {% endif %}
+              </div>
+            </div>
+
+            <div class="col-12">
+              <h6 class="mb-2">Data quality</h6>
+              <div class="table-responsive">
+                <table class="table table-sm align-middle">
+                  <tbody>
+                    <tr><td class="text-muted">rows_total_parsed</td><td class="mono">{{ result.stats.rows_total_parsed }}</td></tr>
+                    <tr><td class="text-muted">rows_classified</td><td class="mono">{{ result.stats.rows_classified }}</td></tr>
+                    <tr><td class="text-muted">rows_unclassified</td><td class="mono">{{ result.stats.rows_unclassified }}</td></tr>
+                    <tr><td class="text-muted">revenue_total_all</td><td class="mono">{{ "%.2f"|format(result.stats.revenue_total_all or 0) }}</td></tr>
+                    <tr><td class="text-muted">revenue_total_classified</td><td class="mono">{{ "%.2f"|format(result.stats.revenue_total_classified or 0) }}</td></tr>
+                    <tr><td class="text-muted">classified_revenue_ratio</td><td class="mono">{{ "%.3f"|format(result.stats.classified_revenue_ratio or 0) }}</td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            <div class="col-12">
+              <h6 class="mb-2">Pattern probabilities</h6>
+              {% if result.scores %}
+                <div class="table-responsive">
+                  <table class="table table-sm align-middle">
+                    <thead>
+                      <tr><th>pattern_id</th><th class="text-end">probability</th></tr>
+                    </thead>
+                    <tbody>
+                      {% for k,v in result.scores.items() %}
+                        <tr>
+                          <td class="mono">{{ k }}</td>
+                          <td class="mono text-end">{{ "%.3f"|format(v) }}</td>
+                        </tr>
+                      {% endfor %}
+                    </tbody>
+                  </table>
+                </div>
+              {% else %}
+                <div class="text-muted">No probabilities (unclassifiable).</div>
+              {% endif %}
+            </div>
+
+            <div class="col-12">
+              <details>
+                <summary class="text-muted">Debug: signature JSON</summary>
+                <pre class="mono mt-2">{{ result.signature | tojson(indent=2) }}</pre>
+              </details>
+            </div>
+
+          </div>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

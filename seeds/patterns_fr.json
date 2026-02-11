@@ -1,0 +1,392 @@
+[
+  {
+    "pattern_id": "fast_food",
+    "label": "Fast food",
+    "country_profile": "FR",
+    "dimensions": {
+      "revenue_by_momentum": {
+        "breakfast": 0.05,
+        "lunch": 0.4,
+        "coffee": 0.1,
+        "apero": 0.1,
+        "dinner": 0.33,
+        "after": 0.02
+      },
+      "category_mix_by_momentum": {
+        "breakfast": {
+          "food": 0.7,
+          "hot": 0.1,
+          "soft": 0.2,
+          "beer": 0,
+          "wine": 0,
+          "spirits": 0
+        },
+        "lunch": {
+          "food": 0.75,
+          "hot": 0,
+          "soft": 0.22,
+          "beer": 0.02,
+          "wine": 0,
+          "spirits": 0.01
+        },
+        "coffee": {
+          "food": 0.65,
+          "hot": 0.05,
+          "soft": 0.25,
+          "beer": 0.04,
+          "wine": 0,
+          "spirits": 0.01
+        },
+        "apero": {
+          "food": 0.6,
+          "hot": 0,
+          "soft": 0.3,
+          "beer": 0.08,
+          "wine": 0.01,
+          "spirits": 0.01
+        },
+        "dinner": {
+          "food": 0.7,
+          "hot": 0,
+          "soft": 0.2,
+          "beer": 0.08,
+          "wine": 0.01,
+          "spirits": 0.01
+        },
+        "after": {
+          "food": 0.6,
+          "hot": 0,
+          "soft": 0.25,
+          "beer": 0.1,
+          "wine": 0.02,
+          "spirits": 0.03
+        }
+      }
+    }
+  },
+  {
+    "pattern_id": "cafe_bar",
+    "label": "Café / Bar",
+    "country_profile": "FR",
+    "dimensions": {
+      "revenue_by_momentum": {
+        "breakfast": 0.15,
+        "lunch": 0.2,
+        "coffee": 0.2,
+        "apero": 0.3,
+        "dinner": 0.12,
+        "after": 0.03
+      },
+      "category_mix_by_momentum": {
+        "breakfast": {
+          "food": 0.1,
+          "hot": 0.6,
+          "soft": 0.25,
+          "beer": 0.05,
+          "wine": 0,
+          "spirits": 0
+        },
+        "lunch": {
+          "food": 0.2,
+          "hot": 0.2,
+          "soft": 0.3,
+          "beer": 0.25,
+          "wine": 0.03,
+          "spirits": 0.02
+        },
+        "coffee": {
+          "food": 0.1,
+          "hot": 0.3,
+          "soft": 0.35,
+          "beer": 0.2,
+          "wine": 0.03,
+          "spirits": 0.02
+        },
+        "apero": {
+          "food": 0.05,
+          "hot": 0,
+          "soft": 0.3,
+          "beer": 0.45,
+          "wine": 0.1,
+          "spirits": 0.1
+        },
+        "dinner": {
+          "food": 0.15,
+          "hot": 0,
+          "soft": 0.25,
+          "beer": 0.4,
+          "wine": 0.1,
+          "spirits": 0.1
+        },
+        "after": {
+          "food": 0.05,
+          "hot": 0,
+          "soft": 0.2,
+          "beer": 0.35,
+          "wine": 0.1,
+          "spirits": 0.3
+        }
+      }
+    }
+  },
+  {
+    "pattern_id": "nightclub",
+    "label": "Boîte de nuit",
+    "country_profile": "FR",
+    "dimensions": {
+      "revenue_by_momentum": {
+        "breakfast": 0,
+        "lunch": 0,
+        "coffee": 0.02,
+        "apero": 0.18,
+        "dinner": 0.2,
+        "after": 0.6
+      },
+      "category_mix_by_momentum": {
+        "breakfast": {
+          "food": 0,
+          "hot": 0,
+          "soft": 1,
+          "beer": 0,
+          "wine": 0,
+          "spirits": 0
+        },
+        "lunch": {
+          "food": 0,
+          "hot": 0,
+          "soft": 1,
+          "beer": 0,
+          "wine": 0,
+          "spirits": 0
+        },
+        "coffee": {
+          "food": 0,
+          "hot": 0,
+          "soft": 0.6,
+          "beer": 0.1,
+          "wine": 0,
+          "spirits": 0.3
+        },
+        "apero": {
+          "food": 0,
+          "hot": 0,
+          "soft": 0.4,
+          "beer": 0.15,
+          "wine": 0.05,
+          "spirits": 0.4
+        },
+        "dinner": {
+          "food": 0,
+          "hot": 0,
+          "soft": 0.35,
+          "beer": 0.15,
+          "wine": 0.05,
+          "spirits": 0.45
+        },
+        "after": {
+          "food": 0,
+          "hot": 0,
+          "soft": 0.3,
+          "beer": 0.1,
+          "wine": 0.05,
+          "spirits": 0.55
+        }
+      }
+    }
+  },
+  {
+    "pattern_id": "table_restaurant",
+    "label": "Restaurant à table",
+    "country_profile": "FR",
+    "dimensions": {
+      "revenue_by_momentum": {
+        "breakfast": 0.02,
+        "lunch": 0.3,
+        "coffee": 0.05,
+        "apero": 0.08,
+        "dinner": 0.52,
+        "after": 0.03
+      },
+      "category_mix_by_momentum": {
+        "breakfast": {
+          "food": 0.6,
+          "hot": 0.2,
+          "soft": 0.2,
+          "beer": 0,
+          "wine": 0,
+          "spirits": 0
+        },
+        "lunch": {
+          "food": 0.65,
+          "hot": 0.05,
+          "soft": 0.1,
+          "beer": 0.05,
+          "wine": 0.13,
+          "spirits": 0.02
+        },
+        "coffee": {
+          "food": 0.4,
+          "hot": 0.3,
+          "soft": 0.2,
+          "beer": 0.05,
+          "wine": 0.03,
+          "spirits": 0.02
+        },
+        "apero": {
+          "food": 0.25,
+          "hot": 0,
+          "soft": 0.2,
+          "beer": 0.15,
+          "wine": 0.3,
+          "spirits": 0.1
+        },
+        "dinner": {
+          "food": 0.55,
+          "hot": 0,
+          "soft": 0.1,
+          "beer": 0.1,
+          "wine": 0.22,
+          "spirits": 0.03
+        },
+        "after": {
+          "food": 0.1,
+          "hot": 0,
+          "soft": 0.3,
+          "beer": 0.2,
+          "wine": 0.25,
+          "spirits": 0.15
+        }
+      }
+    }
+  },
+  {
+    "pattern_id": "brasserie",
+    "label": "Brasserie",
+    "country_profile": "FR",
+    "dimensions": {
+      "revenue_by_momentum": {
+        "breakfast": 0.1,
+        "lunch": 0.35,
+        "coffee": 0.15,
+        "apero": 0.18,
+        "dinner": 0.2,
+        "after": 0.02
+      },
+      "category_mix_by_momentum": {
+        "breakfast": {
+          "food": 0.45,
+          "hot": 0.3,
+          "soft": 0.25,
+          "beer": 0,
+          "wine": 0,
+          "spirits": 0
+        },
+        "lunch": {
+          "food": 0.55,
+          "hot": 0.05,
+          "soft": 0.15,
+          "beer": 0.1,
+          "wine": 0.13,
+          "spirits": 0.02
+        },
+        "coffee": {
+          "food": 0.35,
+          "hot": 0.25,
+          "soft": 0.2,
+          "beer": 0.1,
+          "wine": 0.08,
+          "spirits": 0.02
+        },
+        "apero": {
+          "food": 0.2,
+          "hot": 0,
+          "soft": 0.2,
+          "beer": 0.3,
+          "wine": 0.2,
+          "spirits": 0.1
+        },
+        "dinner": {
+          "food": 0.5,
+          "hot": 0,
+          "soft": 0.1,
+          "beer": 0.15,
+          "wine": 0.2,
+          "spirits": 0.05
+        },
+        "after": {
+          "food": 0.1,
+          "hot": 0,
+          "soft": 0.3,
+          "beer": 0.3,
+          "wine": 0.2,
+          "spirits": 0.1
+        }
+      }
+    }
+  },
+  {
+    "pattern_id": "bakery",
+    "label": "Boulangerie",
+    "country_profile": "FR",
+    "dimensions": {
+      "revenue_by_momentum": {
+        "breakfast": 0.6,
+        "lunch": 0.2,
+        "coffee": 0.15,
+        "apero": 0.03,
+        "dinner": 0.02,
+        "after": 0
+      },
+      "category_mix_by_momentum": {
+        "breakfast": {
+          "food": 0.75,
+          "hot": 0.2,
+          "soft": 0.05,
+          "beer": 0,
+          "wine": 0,
+          "spirits": 0
+        },
+        "lunch": {
+          "food": 0.8,
+          "hot": 0.1,
+          "soft": 0.1,
+          "beer": 0,
+          "wine": 0,
+          "spirits": 0
+        },
+        "coffee": {
+          "food": 0.65,
+          "hot": 0.25,
+          "soft": 0.1,
+          "beer": 0,
+          "wine": 0,
+          "spirits": 0
+        },
+        "apero": {
+          "food": 0.6,
+          "hot": 0.2,
+          "soft": 0.2,
+          "beer": 0,
+          "wine": 0,
+          "spirits": 0
+        },
+        "dinner": {
+          "food": 0.7,
+          "hot": 0.1,
+          "soft": 0.2,
+          "beer": 0,
+          "wine": 0,
+          "spirits": 0
+        },
+        "after": {
+          "food": 0,
+          "hot": 0,
+          "soft": 0,
+          "beer": 0,
+          "wine": 0,
+          "spirits": 0
+        }
+      }
+    }
+  }
+]

@@ -1,30 +1,36 @@
-from sqlalchemy import Column, Integer, String, Text, DateTime, Float
-from sqlalchemy.sql import func
+from sqlalchemy import Column, Integer, String, Text, UniqueConstraint, ForeignKey
+from sqlalchemy.orm import relationship
 from .db import Base
 
+class Country(Base):
+    __tablename__ = "countries"
+
+    code = Column(String, primary_key=True)  # e.g. FR, IL, UK
+    label = Column(String, nullable=False, default="")
+    timezone = Column(String, nullable=False, default="UTC")
+
+    patterns = relationship("PatternV2", back_populates="country")
+
+class PatternV2(Base):
+    __tablename__ = "patterns_v2"
+    __table_args__ = (
+        UniqueConstraint("country_code", "pattern_id", name="uq_country_pattern"),
+    )
+
+    id = Column(Integer, primary_key=True, index=True)
+    country_code = Column(String, ForeignKey("countries.code"), index=True, nullable=False)
+
+    pattern_id = Column(String, index=True, nullable=False)   # canonical id used for scoring
+    label = Column(String, nullable=False, default="")
+    dimensions_json = Column(Text, nullable=False)  # stores {"revenue_by_momentum":..., "category_mix_by_momentum":...}
+
+    country = relationship("Country", back_populates="patterns")
+
+# Legacy v1.1 model kept to avoid breaking existing DBs
 class Pattern(Base):
     __tablename__ = "patterns"
-    id = Column(Integer, primary_key=True, index=True)
-    pattern_id = Column(String, index=True)     # e.g. fast_food
-    label = Column(String, index=True)          # e.g. Fast food
-    country_profile = Column(String, index=True) # e.g. FR
-    json_definition = Column(Text)              # full pattern JSON (1 object)
-    created_at = Column(DateTime(timezone=True), server_default=func.now())
 
-class Upload(Base):
-    __tablename__ = "uploads"
     id = Column(Integer, primary_key=True, index=True)
-    country_profile = Column(String, index=True)
-    filename = Column(String)
-    stored_path = Column(String)
-    created_at = Column(DateTime(timezone=True), server_default=func.now())
-
-class RunResult(Base):
-    __tablename__ = "run_results"
-    id = Column(Integer, primary_key=True, index=True)
-    upload_id = Column(Integer, index=True)
-    country_profile = Column(String, index=True)
-    selected_pattern_id = Column(String, nullable=True)
-    signature_json = Column(Text)          # computed signature JSON
-    scores_json = Column(Text)             # list of {pattern_id, distance, probability}
-    created_at = Column(DateTime(timezone=True), server_default=func.now())
+    name = Column(String, index=True)
+    country = Column(String, index=True)
+    json_definition = Column(Text)

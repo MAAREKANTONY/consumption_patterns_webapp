@@ -1,18 +1,11 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <title>Consumption Patterns</title>
-  <style>
-    body { font-family: Arial, sans-serif; margin: 30px; }
-    a.button { padding: 10px 14px; border: 1px solid #ccc; border-radius: 8px; text-decoration: none; margin-right: 10px; }
-  </style>
-</head>
-<body>
-  <h1>Consumption Patterns WebApp</h1>
-  <p>v1.2 – Uses the same logic as the CLI: momenta + buckets + revenue.</p>
-  <p>
-    <a class="button" href="/patterns">Patterns</a>
-    <a class="button" href="/import">Import & Run</a>
-  </p>
-</body>
-</html>
+{% extends "base.html" %}
+{% set title = "Home — Consumption Patterns" %}
+{% set active = "run" %}
+{% block content %}
+<div class="card shadow-sm">
+  <div class="card-body">
+    <h4 class="mb-2">Consumption Patterns WebApp</h4>
+    <div class="text-muted">Use <a href="/run">Run</a> to upload sales and match patterns (CLI-aligned scoring).</div>
+  </div>
+</div>
+{% endblock %}
