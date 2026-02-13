@@ -197,7 +197,7 @@ def delete_country(code: str):
 # --- Patterns (v2, CLI-aligned) ---
 
 @app.get("/patterns2", response_class=HTMLResponse)
-def patterns_page(request: Request, country: Optional[str] = None):
+def patterns_page(request: Request, country: Optional[str] = None, msg: Optional[str] = None):
     db = db_session()
     try:
         # Decide which dimensions JSON to persist
@@ -232,6 +232,7 @@ def patterns_page(request: Request, country: Optional[str] = None):
                 "countries": countries,
                 "selected_country": selected,
                 "patterns": patterns,
+                "msg": msg,
             },
         )
     finally:
@@ -462,6 +463,79 @@ def seed_fr():
 
 # --- Run / Import sales and score ---
 
+
+
+@app.post("/patterns2/import-json")
+async def patterns_import_json(
+    request: Request,
+    file: UploadFile = File(...),
+    country_override: Optional[str] = Form(None),
+):
+    """Bulk import patterns from a JSON file (list of pattern objects).
+    Upserts by (country_code, pattern_id)."""
+    db = db_session()
+    try:
+        raw = await file.read()
+        try:
+            payload = json.loads(raw.decode("utf-8"))
+        except UnicodeDecodeError:
+            payload = json.loads(raw.decode("utf-8-sig"))
+        except Exception:
+            return RedirectResponse(url=f"/patterns2?msg=Invalid+JSON+file", status_code=303)
+
+        items = payload if isinstance(payload, list) else [payload]
+        if not items:
+            return RedirectResponse(url=f"/patterns2?msg=Empty+file", status_code=303)
+
+        created = 0
+        updated = 0
+        skipped = 0
+
+        for p in items:
+            if not isinstance(p, dict):
+                skipped += 1
+                continue
+
+            cc = (country_override or p.get("country_profile") or p.get("country_code") or "").upper().strip()
+            if not cc:
+                skipped += 1
+                continue
+
+            pid = (p.get("pattern_id") or p.get("id") or "").strip()
+            if not pid:
+                skipped += 1
+                continue
+
+            label = (p.get("label") or pid).strip()
+            dims = p.get("dimensions") or {}
+
+            # Create country if missing (safe default)
+            cobj = db.query(Country).filter(Country.code == cc).first()
+            if cobj is None:
+                db.add(Country(code=cc, label=cc, timezone="UTC"))
+                db.flush()
+
+            existing = (
+                db.query(PatternV2)
+                .filter(PatternV2.country_code == cc, PatternV2.pattern_id == pid)
+                .first()
+            )
+
+            dims_json = json.dumps(dims, ensure_ascii=False)
+
+            if existing:
+                existing.label = label
+                existing.dimensions_json = dims_json
+                updated += 1
+            else:
+                db.add(PatternV2(country_code=cc, pattern_id=pid, label=label, dimensions_json=dims_json))
+                created += 1
+
+        db.commit()
+        msg = f"Imported:+{created}+created,+{updated}+updated,+{skipped}+skipped"
+        return RedirectResponse(url=f"/patterns2?country={(country_override or (items[0].get('country_profile','') if isinstance(items[0],dict) else '')).upper()}&msg={msg}", status_code=303)
+    finally:
+        db.close()
 @app.get("/run", response_class=HTMLResponse)
 def run_page(request: Request, country: Optional[str] = None):
     db = db_session()
