@@ -25,7 +25,7 @@
           <div>
             <label class="form-label">Sales file (CSV or XLSX)</label>
             <input type="file" name="sales_file" class="form-control" accept=".csv,.xlsx,.xls" required>
-            <div class="form-text">Expected columns: datetime/purchase_datetime or (purchase_date+purchase_hour), price+quantity, and taxonomy cat0/cat1/cat2 (or category_produit0/1/2).</div>
+            <div class="form-text">Expected columns: datetime/purchase_datetime or (purchase_date+purchase_hour), price+quantity, and taxonomy cat0..cat4 (or category_produit0..4). If patterns include taxonomy, the scorer uses it (fine-grain); otherwise it falls back to 6 buckets.</div>
           </div>
 
           <button class="btn btn-primary">Run scoring</button>

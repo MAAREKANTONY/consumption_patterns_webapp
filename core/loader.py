@@ -98,16 +98,16 @@ def _iter_rows_from_excel(path: str):
 def load_sales(path: str, tz_name: str = "Europe/Paris"):
     """
     Yields dict rows in canonical shape:
-      datetime, price, quantity, cat0, cat1, cat2, cat3, cat4
+      datetime, price, quantity, datetime, price, quantity, cat0, cat1, cat2, cat3, cat4
 
     Input accepted:
       - CSV (delimiter auto-detected among , ; \t)
       - XLSX (via pandas/openpyxl)
 
     Accepts taxonomy columns named:
-      - cat0/cat1/cat2
-      - category0/category1/category2
-      - category_produit0/category_produit1/category_produit2
+      - cat0..cat4
+      - category0..category4
+      - category_produit0..category_produit4
 
     Accepts datetime columns named:
       - datetime / purchase_datetime
@@ -140,11 +140,15 @@ def load_sales(path: str, tz_name: str = "Europe/Paris"):
         cat0 = _pick(row, "cat0", "category0", "category_produit0")
         cat1 = _pick(row, "cat1", "category1", "category_produit1")
         cat2 = _pick(row, "cat2", "category2", "category_produit2")
+        cat3 = _pick(row, "cat3", "category3", "category_produit3")
+        cat4 = _pick(row, "cat4", "category4", "category_produit4")
 
         # normalize taxonomy strings (strip only; no guessing)
         cat0 = (str(cat0).strip() if cat0 is not None else "")
         cat1 = (str(cat1).strip() if cat1 is not None else "")
         cat2 = (str(cat2).strip() if cat2 is not None else "")
+        cat3 = (str(cat3).strip() if cat3 is not None else "")
+        cat4 = (str(cat4).strip() if cat4 is not None else "")
 
         yield {
             "datetime": dt,
@@ -153,4 +157,6 @@ def load_sales(path: str, tz_name: str = "Europe/Paris"):
             "cat0": cat0,
             "cat1": cat1,
             "cat2": cat2,
+            "cat3": cat3,
+            "cat4": cat4,
         }

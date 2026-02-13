@@ -508,6 +508,26 @@ async def patterns_import_json(
 
             label = (p.get("label") or pid).strip()
             dims = p.get("dimensions") or {}
+            # If the file provides a taxonomy mix inside `category_mix_by_momentum` (keys not in the 6 buckets),
+            # promote it to `category_mix_by_momentum_taxonomy` so the distance engine can use it.
+            try:
+                buckets = {"food","hot","soft","beer","wine","spirits"}
+                cm = (dims.get("category_mix_by_momentum") or {})
+                if isinstance(cm, dict) and "category_mix_by_momentum_taxonomy" not in dims:
+                    found_non_bucket = False
+                    for mm, mp in cm.items():
+                        if isinstance(mp, dict):
+                            for k in mp.keys():
+                                if str(k) not in buckets:
+                                    found_non_bucket = True
+                                    break
+                        if found_non_bucket:
+                            break
+                    if found_non_bucket:
+                        dims["category_mix_by_momentum_taxonomy"] = cm
+            except Exception:
+                pass
+
 
             # Create country if missing (safe default)
             cobj = db.query(Country).filter(Country.code == cc).first()
