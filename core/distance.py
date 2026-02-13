@@ -43,14 +43,30 @@ def score_against_patterns(signature: Dict[str, Any], patterns_source: Union[str
         )
 
         # 2) Product mix distance weighted by pattern's momentum weights
-        dm = 0.0
-        for m in MOMENTA:
-            weight = pattern["dimensions"]["revenue_by_momentum"].get(m, 0.0)
 
-            outlet_mix = signature["category_mix_by_momentum"].get(m, {})
-            pattern_mix = pattern["dimensions"]["category_mix_by_momentum"].get(m, {})
+# 2) Product mix distance (weighted by the momentum importance)
+# If both signature + pattern include full taxonomy mixes, score on taxonomy keys.
+use_taxonomy = (
+    isinstance(signature.get("category_mix_by_momentum_taxonomy"), dict)
+    and isinstance(pattern.get("dimensions", {}).get("category_mix_by_momentum_taxonomy"), dict)
+    and any(signature["category_mix_by_momentum_taxonomy"].get(mm) for mm in MOMENTA)
+)
 
-            dm += weight * l1_on_keys(outlet_mix, pattern_mix, BUCKETS)
+dm = 0.0
+for m in MOMENTA:
+    weight = pattern["dimensions"]["revenue_by_momentum"].get(m, 0.0)
+
+    if use_taxonomy:
+        outlet_mix = signature.get("category_mix_by_momentum_taxonomy", {}).get(m, {}) or {}
+        pattern_mix = pattern.get("dimensions", {}).get("category_mix_by_momentum_taxonomy", {}).get(m, {}) or {}
+        keys = sorted(set(outlet_mix.keys()) | set(pattern_mix.keys()))
+        if not keys:
+            continue
+        dm += weight * l1_on_keys(outlet_mix, pattern_mix, keys)
+    else:
+        outlet_mix = signature["category_mix_by_momentum"].get(m, {}) or {}
+        pattern_mix = pattern["dimensions"]["category_mix_by_momentum"].get(m, {}) or {}
+        dm += weight * l1_on_keys(outlet_mix, pattern_mix, BUCKETS)
 
         # Global distance
         d_total = 0.6 * dt + 0.4 * dm

@@ -98,7 +98,7 @@ def _iter_rows_from_excel(path: str):
 def load_sales(path: str, tz_name: str = "Europe/Paris"):
     """
     Yields dict rows in canonical shape:
-      datetime, price, quantity, cat0, cat1, cat2
+      datetime, price, quantity, cat0, cat1, cat2, cat3, cat4
 
     Input accepted:
       - CSV (delimiter auto-detected among , ; \t)
