@@ -12,7 +12,7 @@ from sqlalchemy.orm import Session
 from .db import engine, SessionLocal, Base
 from .models import Country, PatternV2
 
-from core.signature import compute_outlet_signature
+from core.signature import compute_outlet_signature, rollup_taxonomy_key_from_string
 from core.distance import score_against_patterns
 from core.decision import select_best_pattern
 
@@ -525,6 +525,32 @@ async def patterns_import_json(
                             break
                     if found_non_bucket:
                         dims["category_mix_by_momentum_taxonomy"] = cm
+            except Exception:
+                pass
+
+            # Preset 2 roll-up: collapse deep taxonomy keys (e.g. Food > meals > pasta > rigattoni -> Food > meals > pasta)
+            try:
+                cm_tax = dims.get("category_mix_by_momentum_taxonomy")
+                if isinstance(cm_tax, dict):
+                    rolled = {}
+                    for mm, mp in cm_tax.items():
+                        if not isinstance(mp, dict):
+                            continue
+                        agg = {}
+                        for k, v in mp.items():
+                            rk = rollup_taxonomy_key_from_string(k)
+                            if not rk:
+                                continue
+                            try:
+                                val = float(v)
+                            except Exception:
+                                continue
+                            agg[rk] = agg.get(rk, 0.0) + val
+                        s = sum(agg.values())
+                        if s > 0:
+                            agg = {k: vv / s for k, vv in agg.items()}
+                        rolled[mm] = agg
+                    dims["category_mix_by_momentum_taxonomy"] = rolled
             except Exception:
                 pass
 

@@ -2,23 +2,61 @@ from collections import defaultdict
 from core.loader import load_sales
 from core.momentum import get_momentum
 from core.bucket import get_bucket
+import re
 
 MOMENTA = ["breakfast", "lunch", "coffee", "apero", "dinner", "after"]
 BUCKETS = ["food", "hot", "soft", "beer", "wine", "spirits"]
 
 
-def _taxonomy_key(cat0: str, cat1: str, cat2: str, cat3: str = "", cat4: str = "") -> str:
-    """Build a stable taxonomy path key from cat0..cat4.
+def _is_wine_like(parts: list[str]) -> bool:
+    # Wine-like if any segment contains "wine(s)", "champagne" or "sparkling"
+    for p in parts:
+        pl = p.lower()
+        if "champagne" in pl or "sparkling" in pl:
+            return True
+        if re.search(r"\bwine(s)?\b", p, flags=re.IGNORECASE):
+            return True
+    return False
 
-    Uses the deepest non-empty level and joins levels with ' > '.
-    Returns empty string if cat0 is empty.
+
+def rollup_taxonomy_parts(parts: list[str]) -> list[str]:
     """
-    parts = [cat0, cat1, cat2, cat3, cat4]
+    Preset 2 ("resto-friendly"):
+      - Food: depth=3  -> category0 > category1 > category2
+      - Beverage (non-wine): depth=3
+      - Beverage (wine-like): depth=4  -> keep category3 (e.g. Wines > Red Wines)
+    """
     parts = [p.strip() for p in parts if isinstance(p, str) and p.strip() != ""]
+    if not parts:
+        return []
+
+    root = parts[0].lower()
+    is_food = root == "food"
+    is_beverage = root in ("beverage", "drink", "drinks")
+
+    if is_food:
+        depth = 3
+    elif is_beverage:
+        depth = 4 if _is_wine_like(parts) else 3
+    else:
+        depth = 3
+
+    return parts[: min(depth, len(parts))]
+
+
+def rollup_taxonomy_key_from_string(key: str) -> str:
+    parts = [p.strip() for p in str(key).split(">")]
+    parts = rollup_taxonomy_parts(parts)
+    return " > ".join(parts) if parts else ""
+
+
+def _taxonomy_key(cat0: str, cat1: str, cat2: str, cat3: str = "", cat4: str = "") -> str:
+    """Build a rolled-up taxonomy path key from cat0..cat4 (Preset 2)."""
+    parts = [cat0, cat1, cat2, cat3, cat4]
+    parts = rollup_taxonomy_parts(parts)
     if not parts:
         return ""
     return " > ".join(parts)
-
 
 def compute_outlet_signature(path: str, tz_name: str = "Europe/Paris"):
     """

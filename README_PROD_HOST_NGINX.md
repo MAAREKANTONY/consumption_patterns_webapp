@@ -56,3 +56,13 @@ Each Pattern stores **dimensions** only:
 - `category_mix_by_momentum`: per momentum, shares over `food,hot,soft,beer,wine,spirits`
 
 A sample FR patterns file is included at `seeds/patterns_fr.json` and can be imported from the UI.
+
+
+## Taxonomy roll-up (Preset 2: resto-friendly)
+
+This version rolls up deep taxonomy paths when computing signatures and when importing patterns.
+- Food: keep up to category2 (Food > category1 > category2)
+- Beverage: keep up to category2, except wine-like branches keep category3 (e.g. Beverage > Adult Beverages > Wines > Red Wines)
+
+A ready-to-import patterns file is included:
+`patterns/patterns_FR_market_segments_taxonomy_preset2_rollup.json`
