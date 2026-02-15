@@ -66,3 +66,21 @@ This version rolls up deep taxonomy paths when computing signatures and when imp
 
 A ready-to-import patterns file is included:
 `patterns/patterns_FR_market_segments_taxonomy_preset2_rollup.json`
+
+
+## BigQuery API (optional)
+
+Create a `.env` file from the template:
+
+- copy `.env.example` to `.env`
+- set `GCP_PROJECT` and (optionally) `BQ_DATASET`
+
+Credentials are provided via docker `secrets`:
+- put your service account JSON at `secrets/gcp_sa_key.json` (not committed)
+- container will read it from `/run/secrets/gcp_sa_key` via `GOOGLE_APPLICATION_CREDENTIALS`.
+
+Endpoints:
+- `POST /sales/query/by-outlets`
+- `POST /sales/query/by-country`
+- `POST /score/by-outlets`
+- `POST /score/by-country`

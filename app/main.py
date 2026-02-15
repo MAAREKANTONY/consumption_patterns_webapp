@@ -4,10 +4,23 @@ import tempfile
 from pathlib import Path
 from typing import Optional
 
+from datetime import date
+from io import StringIO
+import csv
+
+from fastapi.responses import JSONResponse, PlainTextResponse
+from pydantic import BaseModel
 from fastapi import FastAPI, Request, Form, UploadFile, File
 from fastapi.responses import HTMLResponse, RedirectResponse
 from fastapi.templating import Jinja2Templates
 from sqlalchemy.orm import Session
+
+
+# BigQuery is optional. If not installed or not configured, BigQuery endpoints will return a clear error.
+try:
+    from google.cloud import bigquery  # type: ignore
+except Exception:  # pragma: no cover
+    bigquery = None  # type: ignore
 
 from .db import engine, SessionLocal, Base
 from .models import Country, PatternV2
@@ -31,6 +44,131 @@ templates = Jinja2Templates(directory="app/templates")
 Base.metadata.create_all(bind=engine)
 
 # ---------- Helpers ----------
+# ---------- BigQuery models ----------
+
+class SalesByOutletsRequest(BaseModel):
+    fyre_ids: list[str]
+    date_start: date
+    date_end: date
+    format: str | None = None  # "json" (default) or "csv"
+
+class SalesByCountryRequest(BaseModel):
+    country: str
+    date_start: date
+    date_end: date
+    format: str | None = None  # "json" (default) or "csv"
+
+def _require_bigquery():
+    if bigquery is None:
+        raise RuntimeError("BigQuery client library not available. Install google-cloud-bigquery and rebuild the container.")
+    project = os.getenv("GCP_PROJECT") or os.getenv("GOOGLE_CLOUD_PROJECT")
+    if not project:
+        raise RuntimeError("Missing GCP_PROJECT (or GOOGLE_CLOUD_PROJECT) environment variable.")
+    return project
+
+def _bq_client():
+    project = _require_bigquery()
+    return bigquery.Client(project=project)
+
+BQ_DATASET = os.getenv("BQ_DATASET", "datafyre_my_lemonade")
+
+def _sales_query_sql_by_outlets():
+    return f"""
+SELECT
+  cp.fyre_id,
+  cp.product_name,
+  cp.category0 AS cat0,
+  cp.category1 AS cat1,
+  cp.category2 AS cat2,
+  cp.category3 AS cat3,
+  cp.category4 AS cat4,
+  oi.price,
+  oi.quantity,
+  oi.created_at AS datetime,
+  l.country
+FROM `{BQ_DATASET}.Locations` l
+LEFT JOIN `{BQ_DATASET}.CatalogProducts` cp
+  ON l.fyre_id = cp.fyre_id
+LEFT JOIN `{BQ_DATASET}.OrderItems` oi
+  ON oi.fyre_id = cp.fyre_id
+ AND oi.catalog_id = cp.catalog_id
+ AND oi.product_ref = cp.product_ref
+ AND oi.sku_ref = cp.sku_ref
+WHERE cp.fyre_id IN UNNEST(@fyre_ids)
+  AND oi.purchase_date >= @date_start
+  AND oi.purchase_date <= @date_end
+""".strip()
+
+def _sales_query_sql_by_country():
+    return f"""
+SELECT
+  cp.fyre_id,
+  cp.product_name,
+  cp.category0 AS cat0,
+  cp.category1 AS cat1,
+  cp.category2 AS cat2,
+  cp.category3 AS cat3,
+  cp.category4 AS cat4,
+  oi.price,
+  oi.quantity,
+  oi.created_at AS datetime,
+  l.country
+FROM `{BQ_DATASET}.Locations` l
+LEFT JOIN `{BQ_DATASET}.CatalogProducts` cp
+  ON l.fyre_id = cp.fyre_id
+LEFT JOIN `{BQ_DATASET}.OrderItems` oi
+  ON oi.fyre_id = cp.fyre_id
+ AND oi.catalog_id = cp.catalog_id
+ AND oi.product_ref = cp.product_ref
+ AND oi.sku_ref = cp.sku_ref
+WHERE l.country = @country
+  AND oi.purchase_date >= @date_start
+  AND oi.purchase_date <= @date_end
+""".strip()
+
+def _rows_to_csv_text(rows: list[dict]) -> str:
+    # Keep exactly the expected CSV columns (+ country) for compatibility
+    cols = ["fyre_id","product_name","cat0","cat1","cat2","cat3","cat4","price","quantity","datetime","country"]
+    buf = StringIO()
+    w = csv.DictWriter(buf, fieldnames=cols, delimiter=";")
+    w.writeheader()
+    for r in rows:
+        out = {c: r.get(c, "") for c in cols}
+        w.writerow(out)
+    return buf.getvalue()
+
+def _bq_fetch_rows_by_outlets(fyre_ids: list[str], date_start: date, date_end: date) -> list[dict]:
+    client = _bq_client()
+    job_config = bigquery.QueryJobConfig(
+        query_parameters=[
+            bigquery.ArrayQueryParameter("fyre_ids", "STRING", fyre_ids),
+            bigquery.ScalarQueryParameter("date_start", "DATE", str(date_start)),
+            bigquery.ScalarQueryParameter("date_end", "DATE", str(date_end)),
+        ]
+    )
+    query = _sales_query_sql_by_outlets()
+    res = client.query(query, job_config=job_config).result()
+    rows=[]
+    for row in res:
+        rows.append({k: row.get(k) for k in row.keys()})
+    return rows
+
+def _bq_fetch_rows_by_country(country: str, date_start: date, date_end: date) -> list[dict]:
+    client = _bq_client()
+    job_config = bigquery.QueryJobConfig(
+        query_parameters=[
+            bigquery.ScalarQueryParameter("country", "STRING", country.upper()),
+            bigquery.ScalarQueryParameter("date_start", "DATE", str(date_start)),
+            bigquery.ScalarQueryParameter("date_end", "DATE", str(date_end)),
+        ]
+    )
+    query = _sales_query_sql_by_country()
+    res = client.query(query, job_config=job_config).result()
+    rows=[]
+    for row in res:
+        rows.append({k: row.get(k) for k in row.keys()})
+    return rows
+
 
 def db_session() -> Session:
     return SessionLocal()
@@ -582,6 +720,150 @@ async def patterns_import_json(
         return RedirectResponse(url=f"/patterns2?country={(country_override or (items[0].get('country_profile','') if isinstance(items[0],dict) else '')).upper()}&msg={msg}", status_code=303)
     finally:
         db.close()
+# ---------- BigQuery Sales API ----------
+
+@app.post("/sales/query/by-outlets")
+def sales_query_by_outlets(payload: SalesByOutletsRequest):
+    try:
+        rows = _bq_fetch_rows_by_outlets(payload.fyre_ids, payload.date_start, payload.date_end)
+    except Exception as e:
+        return JSONResponse(status_code=400, content={"error": str(e)})
+    fmt = (payload.format or "json").lower()
+    if fmt == "csv":
+        return PlainTextResponse(_rows_to_csv_text(rows), media_type="text/csv")
+    return {"rows": rows}
+
+@app.post("/sales/query/by-country")
+def sales_query_by_country(payload: SalesByCountryRequest):
+    try:
+        rows = _bq_fetch_rows_by_country(payload.country, payload.date_start, payload.date_end)
+    except Exception as e:
+        return JSONResponse(status_code=400, content={"error": str(e)})
+    fmt = (payload.format or "json").lower()
+    if fmt == "csv":
+        return PlainTextResponse(_rows_to_csv_text(rows), media_type="text/csv")
+    return {"rows": rows}
+
+@app.post("/score/by-outlets")
+def score_by_outlets(payload: SalesByOutletsRequest):
+    # Fetch sales rows once, then score per fyre_id using the detected country per outlet
+    try:
+        rows = _bq_fetch_rows_by_outlets(payload.fyre_ids, payload.date_start, payload.date_end)
+    except Exception as e:
+        return JSONResponse(status_code=400, content={"error": str(e)})
+
+    # Group rows by fyre_id
+    by_outlet: dict[str, list[dict]] = {}
+    for r in rows:
+        fid = str(r.get("fyre_id") or "")
+        if not fid:
+            continue
+        by_outlet.setdefault(fid, []).append(r)
+
+    db = db_session()
+    try:
+        results = {}
+        for fid, outlet_rows in by_outlet.items():
+            # Detect country (majority / first non-null)
+            country = None
+            for r in outlet_rows:
+                c = r.get("country")
+                if c:
+                    country = str(c).upper()
+                    break
+            country = (country or "FR").upper()
+
+            # Build temp CSV and reuse existing signature pipeline
+            tmp_dir = Path(tempfile.mkdtemp(prefix=f"cpatterns_bq_{fid}_"))
+            tmp_path = tmp_dir / f"bq_{fid}.csv"
+            tmp_path.write_text(_rows_to_csv_text(outlet_rows), encoding="utf-8")
+
+            cobj = db.query(Country).filter(Country.code == country).first()
+            tz = cobj.timezone if cobj else "UTC"
+            patterns = load_patterns_for_country(db, country)
+
+            signature = compute_outlet_signature(str(tmp_path), tz_name=tz)
+            stats = signature.get("stats", {})
+            out = {"country": country, "signature": signature, "stats": stats, "scores": None, "selected": None, "message": None}
+
+            if stats.get("revenue_total_classified", 0.0) == 0.0:
+                out["message"] = "UNCLASSIFIABLE: no classified revenue in this file (all rows unclassified or mapping mismatch)."
+            elif not patterns:
+                out["message"] = f"UNCLASSIFIABLE: no patterns configured for country {country}."
+            else:
+                scores = score_against_patterns(signature, patterns)
+                if not scores:
+                    out["message"] = "UNCLASSIFIABLE: scoring failed (patterns unreadable or total score = 0)."
+                else:
+                    out["scores"] = dict(sorted(scores.items(), key=lambda x: x[1], reverse=True))
+                    out["selected"] = select_best_pattern(out["scores"])
+
+            results[fid] = out
+
+            try:
+                tmp_path.unlink(missing_ok=True); tmp_dir.rmdir()
+            except Exception:
+                pass
+
+        return {"results": results}
+    finally:
+        db.close()
+
+@app.post("/score/by-country")
+def score_by_country(payload: SalesByCountryRequest):
+    try:
+        rows = _bq_fetch_rows_by_country(payload.country, payload.date_start, payload.date_end)
+    except Exception as e:
+        return JSONResponse(status_code=400, content={"error": str(e)})
+
+    by_outlet: dict[str, list[dict]] = {}
+    for r in rows:
+        fid = str(r.get("fyre_id") or "")
+        if not fid:
+            continue
+        by_outlet.setdefault(fid, []).append(r)
+
+    country = payload.country.strip().upper()
+
+    db = db_session()
+    try:
+        results = {}
+        for fid, outlet_rows in by_outlet.items():
+            tmp_dir = Path(tempfile.mkdtemp(prefix=f"cpatterns_bq_{fid}_"))
+            tmp_path = tmp_dir / f"bq_{fid}.csv"
+            tmp_path.write_text(_rows_to_csv_text(outlet_rows), encoding="utf-8")
+
+            cobj = db.query(Country).filter(Country.code == country).first()
+            tz = cobj.timezone if cobj else "UTC"
+            patterns = load_patterns_for_country(db, country)
+
+            signature = compute_outlet_signature(str(tmp_path), tz_name=tz)
+            stats = signature.get("stats", {})
+            out = {"country": country, "signature": signature, "stats": stats, "scores": None, "selected": None, "message": None}
+
+            if stats.get("revenue_total_classified", 0.0) == 0.0:
+                out["message"] = "UNCLASSIFIABLE: no classified revenue in this file (all rows unclassified or mapping mismatch)."
+            elif not patterns:
+                out["message"] = f"UNCLASSIFIABLE: no patterns configured for country {country}."
+            else:
+                scores = score_against_patterns(signature, patterns)
+                if not scores:
+                    out["message"] = "UNCLASSIFIABLE: scoring failed (patterns unreadable or total score = 0)."
+                else:
+                    out["scores"] = dict(sorted(scores.items(), key=lambda x: x[1], reverse=True))
+                    out["selected"] = select_best_pattern(out["scores"])
+
+            results[fid] = out
+
+            try:
+                tmp_path.unlink(missing_ok=True); tmp_dir.rmdir()
+            except Exception:
+                pass
+
+        return {"results": results}
+    finally:
+        db.close()
+
 @app.get("/run", response_class=HTMLResponse)
 def run_page(request: Request, country: Optional[str] = None):
     db = db_session()
