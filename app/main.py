@@ -899,6 +899,25 @@ def run_page(request: Request, country: Optional[str] = None):
     finally:
         db.close()
 
+
+@app.get("/bq", response_class=HTMLResponse)
+def bigquery_page(request: Request):
+    """UI to query BigQuery-backed sales endpoints and run scoring (CSV upload UI stays on /run)."""
+    db = db_session()
+    try:
+        countries = db.query(Country).order_by(Country.code.asc()).all()
+        return templates.TemplateResponse(
+            "bq.html",
+            {
+                "request": request,
+                "countries": countries,
+                "gcp_project": os.getenv("GCP_PROJECT"),
+                "bq_dataset": os.getenv("BQ_DATASET"),
+            },
+        )
+    finally:
+        db.close()
+
 @app.post("/run", response_class=HTMLResponse)
 async def run_score(
     request: Request,

@@ -23,6 +23,7 @@
     <div class="collapse navbar-collapse" id="nav">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item"><a class="nav-link{% if active=='run' %} active{% endif %}" href="/run">Run</a></li>
+        <li class="nav-item"><a class="nav-link{% if active=='bq' %} active{% endif %}" href="/bq">BigQuery</a></li>
         <li class="nav-item"><a class="nav-link{% if active=='patterns' %} active{% endif %}" href="/patterns2">Patterns</a></li>
         <li class="nav-item"><a class="nav-link{% if active=='countries' %} active{% endif %}" href="/countries">Countries</a></li>
       </ul>
@@ -33,7 +34,7 @@
 <main class="container my-4">
   {% block content %}{% endblock %}
   <footer class="text-muted small mt-5 mb-4">
-    <div>v1.2 (CLI-aligned) — FastAPI + Postgres + Host Nginx</div>
+    <div>v1.3.7 — FastAPI + Postgres + Host Nginx (+ BigQuery API)</div>
   </footer>
 </main>
 

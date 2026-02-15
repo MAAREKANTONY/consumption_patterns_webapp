@@ -1,0 +1,250 @@
+{% extends "base.html" %}
+{% set title = "BigQuery — Consumption Patterns" %}
+{% set active = "bq" %}
+{% block content %}
+
+<div class="row g-3">
+  <div class="col-12">
+    <div class="card shadow-sm">
+      <div class="card-body">
+        <div class="d-flex flex-wrap align-items-center justify-content-between gap-2">
+          <div>
+            <h5 class="card-title mb-1">BigQuery import & scoring</h5>
+            <div class="text-muted small">Fetch sales from BigQuery, then score outlets against country patterns. (CSV upload remains available in the <a href="/run">Run</a> page.)</div>
+          </div>
+          <div class="text-muted small mono">
+            Project: {{ gcp_project or "—" }} · Dataset: {{ bq_dataset or "—" }}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-12 col-lg-5">
+    <div class="card shadow-sm">
+      <div class="card-body">
+        <ul class="nav nav-pills mb-3" id="bqTabs" role="tablist">
+          <li class="nav-item" role="presentation">
+            <button class="nav-link active" id="tab-outlets" data-bs-toggle="pill" data-bs-target="#pane-outlets" type="button" role="tab">By outlets</button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button class="nav-link" id="tab-country" data-bs-toggle="pill" data-bs-target="#pane-country" type="button" role="tab">By country</button>
+          </li>
+        </ul>
+
+        <div class="tab-content" id="bqTabContent">
+          <div class="tab-pane fade show active" id="pane-outlets" role="tabpanel">
+            <form id="formByOutlets" class="vstack gap-3">
+              <div>
+                <label class="form-label">FYRE outlet IDs</label>
+                <textarea class="form-control mono" id="fyreIds" rows="5" placeholder="One per line, or comma-separated" required></textarea>
+                <div class="form-text">Example: FR0205267682</div>
+              </div>
+
+              <div class="row g-2">
+                <div class="col-6">
+                  <label class="form-label">Start date</label>
+                  <input type="date" class="form-control" id="dateStart1" required>
+                </div>
+                <div class="col-6">
+                  <label class="form-label">End date</label>
+                  <input type="date" class="form-control" id="dateEnd1" required>
+                </div>
+              </div>
+
+              <div>
+                <label class="form-label">Action</label>
+                <div class="d-grid gap-2">
+                  <button class="btn btn-outline-primary" type="submit" data-action="fetch">Fetch sales (CSV download)</button>
+                  <button class="btn btn-primary" type="submit" data-action="score">Score outlets (JSON)</button>
+                </div>
+                <div class="form-text">“Fetch” returns the same columns as the CSV importer (+ country ISO2). “Score” computes one result per fyre_id and selects patterns by country.</div>
+              </div>
+            </form>
+          </div>
+
+          <div class="tab-pane fade" id="pane-country" role="tabpanel">
+            <form id="formByCountry" class="vstack gap-3">
+              <div>
+                <label class="form-label">Country (ISO2)</label>
+                <select class="form-select" id="countryIso2" required>
+                  <option value="" selected disabled>Choose…</option>
+                  {% for c in countries %}
+                    <option value="{{ c.code }}">{{ c.code }} — {{ c.label }}</option>
+                  {% endfor %}
+                </select>
+              </div>
+
+              <div class="row g-2">
+                <div class="col-6">
+                  <label class="form-label">Start date</label>
+                  <input type="date" class="form-control" id="dateStart2" required>
+                </div>
+                <div class="col-6">
+                  <label class="form-label">End date</label>
+                  <input type="date" class="form-control" id="dateEnd2" required>
+                </div>
+              </div>
+
+              <div>
+                <label class="form-label">Action</label>
+                <div class="d-grid gap-2">
+                  <button class="btn btn-outline-primary" type="submit" data-action="fetch">Fetch sales (CSV download)</button>
+                  <button class="btn btn-primary" type="submit" data-action="score">Score outlets (JSON)</button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+
+        <hr class="my-4">
+        <div class="small text-muted">
+          Tips:
+          <ul class="mb-0">
+            <li>If you get a 401/403: check your <span class="mono">gcp_sa_key.json</span> mount + BigQuery roles (<span class="mono">BigQuery Data Viewer</span> + <span class="mono">BigQuery Job User</span>).</li>
+            <li>If you get 405 in browser: ensure you call <span class="mono">https://</span> (avoid redirects that may convert POST → GET).</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-12 col-lg-7">
+    <div class="card shadow-sm">
+      <div class="card-body">
+        <div class="d-flex align-items-center justify-content-between">
+          <h5 class="card-title mb-0">Response</h5>
+          <div class="d-flex gap-2">
+            <button id="btnClear" class="btn btn-sm btn-outline-secondary" type="button">Clear</button>
+            <button id="btnCopy" class="btn btn-sm btn-outline-secondary" type="button">Copy JSON</button>
+          </div>
+        </div>
+        <div class="text-muted small mt-2" id="statusLine">Ready.</div>
+        <pre class="mono mt-3 mb-0" id="output" style="min-height: 420px;">{
+  "note": "Use the left panel to fetch or score."
+}</pre>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  const out = document.getElementById('output');
+  const statusLine = document.getElementById('statusLine');
+  const btnClear = document.getElementById('btnClear');
+  const btnCopy = document.getElementById('btnCopy');
+
+  function setStatus(msg) { statusLine.textContent = msg; }
+  function setOutput(objOrText) {
+    if (typeof objOrText === 'string') out.textContent = objOrText;
+    else out.textContent = JSON.stringify(objOrText, null, 2);
+  }
+  function parseFyreIds(raw) {
+    return raw.split(/\n|,|;|\s+/).map(s => s.trim()).filter(Boolean);
+  }
+  function downloadBlob(blob, filename) {
+    const url = window.URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = filename;
+    document.body.appendChild(a);
+    a.click();
+    a.remove();
+    window.URL.revokeObjectURL(url);
+  }
+  async function postJson(url, payload) {
+    return await fetch(url, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(payload)
+    });
+  }
+
+  async function handleAction(kind, action) {
+    try {
+      setStatus('Working…');
+
+      let payload;
+      if (kind === 'outlets') {
+        payload = {
+          fyre_ids: parseFyreIds(document.getElementById('fyreIds').value),
+          date_start: document.getElementById('dateStart1').value,
+          date_end: document.getElementById('dateEnd1').value,
+          format: 'csv'
+        };
+        if (!payload.fyre_ids.length) throw new Error('Please provide at least one fyre_id');
+      } else {
+        payload = {
+          country: document.getElementById('countryIso2').value,
+          date_start: document.getElementById('dateStart2').value,
+          date_end: document.getElementById('dateEnd2').value,
+          format: 'csv'
+        };
+      }
+
+      const fetchUrl = kind === 'outlets' ? '/sales/query/by-outlets' : '/sales/query/by-country';
+      const scoreUrl = kind === 'outlets' ? '/score/by-outlets' : '/score/by-country';
+
+      if (action === 'fetch') {
+        const resp = await postJson(fetchUrl, payload);
+        if (!resp.ok) {
+          const txt = await resp.text();
+          setOutput(txt);
+          setStatus(`Error ${resp.status}: ${resp.statusText}`);
+          return;
+        }
+        const blob = await resp.blob();
+        const name = kind === 'outlets'
+          ? `sales_by_outlets_${payload.date_start}_${payload.date_end}.csv`
+          : `sales_by_country_${payload.country}_${payload.date_start}_${payload.date_end}.csv`;
+        downloadBlob(blob, name);
+        setOutput({ ok: true, downloaded: name, bytes: blob.size });
+        setStatus('CSV downloaded.');
+        return;
+      }
+
+      const scorePayload = { ...payload };
+      delete scorePayload.format;
+
+      const resp = await postJson(scoreUrl, scorePayload);
+      if (!resp.ok) {
+        const txt = await resp.text();
+        setOutput(txt);
+        setStatus(`Error ${resp.status}: ${resp.statusText}`);
+        return;
+      }
+      const data = await resp.json();
+      setOutput(data);
+      setStatus('Scoring completed.');
+    } catch (e) {
+      setOutput({ error: String(e) });
+      setStatus('Failed.');
+    }
+  }
+
+  document.getElementById('formByOutlets').addEventListener('submit', (ev) => {
+    ev.preventDefault();
+    const action = ev.submitter?.dataset?.action || 'score';
+    handleAction('outlets', action);
+  });
+  document.getElementById('formByCountry').addEventListener('submit', (ev) => {
+    ev.preventDefault();
+    const action = ev.submitter?.dataset?.action || 'score';
+    handleAction('country', action);
+  });
+
+  btnClear.addEventListener('click', () => {
+    setOutput({ note: 'Cleared.' });
+    setStatus('Ready.');
+  });
+  btnCopy.addEventListener('click', async () => {
+    try {
+      await navigator.clipboard.writeText(out.textContent);
+      setStatus('Copied to clipboard.');
+    } catch {
+      setStatus('Copy failed (browser permissions).');
+    }
+  });
+</script>
+
+{% endblock %}
