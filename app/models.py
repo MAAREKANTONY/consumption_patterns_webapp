@@ -1,6 +1,8 @@
 from sqlalchemy import Column, Integer, String, Text, UniqueConstraint, ForeignKey
 from sqlalchemy.orm import relationship
 from .db import Base
+from sqlalchemy.sql import func
+from sqlalchemy import DateTime, Float
 
 class Country(Base):
     __tablename__ = "countries"
@@ -34,3 +36,38 @@ class Pattern(Base):
     name = Column(String, index=True)
     country = Column(String, index=True)
     json_definition = Column(Text)
+
+
+# --- Premiumisation ---
+
+class PremiumProfile(Base):
+    __tablename__ = "premium_profiles"
+    __table_args__ = (
+        UniqueConstraint("country_code", "profile_id", name="uq_country_premium_profile"),
+    )
+
+    id = Column(Integer, primary_key=True, index=True)
+    country_code = Column(String, ForeignKey("countries.code"), index=True, nullable=False)
+    profile_id = Column(String, index=True, nullable=False)  # e.g. FR_v1
+    label = Column(String, nullable=False, default="")
+    config_json = Column(Text, nullable=False)
+
+    country = relationship("Country")
+
+
+class PremiumTicketPercentiles(Base):
+    __tablename__ = "premium_ticket_percentiles"
+    __table_args__ = (
+        UniqueConstraint("country_code", "segment_key", name="uq_country_segment_percentiles"),
+    )
+
+    id = Column(Integer, primary_key=True, index=True)
+    country_code = Column(String, ForeignKey("countries.code"), index=True, nullable=False)
+    segment_key = Column(String, index=True, nullable=False)
+
+    p50 = Column(Float, nullable=False)
+    p80 = Column(Float, nullable=False)
+    p95 = Column(Float, nullable=False)
+    computed_at = Column(DateTime(timezone=True), server_default=func.now(), nullable=False)
+
+    country = relationship("Country")

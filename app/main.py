@@ -23,11 +23,12 @@ except Exception:  # pragma: no cover
     bigquery = None  # type: ignore
 
 from .db import engine, SessionLocal, Base
-from .models import Country, PatternV2
+from .models import Country, PatternV2, PremiumProfile, PremiumTicketPercentiles
 
 from core.signature import compute_outlet_signature, rollup_taxonomy_key_from_string
 from core.distance import score_against_patterns
 from core.decision import select_best_pattern
+from core.premiumisation import score_outlet
 
 # NOTE: Some blocks in this file reference `dims` / `pattern_db_id` as locals
 # in the pattern save flow. We define safe defaults here to prevent startup
@@ -58,6 +59,27 @@ class SalesByCountryRequest(BaseModel):
     date_end: date
     format: str | None = None  # "json" (default) or "csv"
 
+
+# ---------- Premiumisation models ----------
+
+class PremiumByOutletsRequest(BaseModel):
+    fyre_ids: list[str]
+    date_start: date
+    date_end: date
+
+class PremiumByCountryRequest(BaseModel):
+    country: str
+    date_start: date
+    date_end: date
+
+class PremiumImportRequest(BaseModel):
+    profiles: list[dict]
+
+class PremiumRecomputePercentilesRequest(BaseModel):
+    country: str
+    date_start: date
+    date_end: date
+
 def _require_bigquery():
     if bigquery is None:
         raise RuntimeError("BigQuery client library not available. Install google-cloud-bigquery and rebuild the container.")
@@ -71,6 +93,117 @@ def _bq_client():
     return bigquery.Client(project=project)
 
 BQ_DATASET = os.getenv("BQ_DATASET", "datafyre_my_lemonade")
+
+# ---------- Premiumisation BigQuery SQL ----------
+
+def _premium_query_sql_by_outlets():
+    return f"""
+SELECT
+  l.fyre_id,
+  oi.order_id,
+  oi.price,
+  oi.subtotal,
+  oi.guests_count,
+  oi.quantity,
+  oi.created_at,
+  cp.brand,
+  cp.owner,
+  cp.category0,
+  cp.category1,
+  cp.category2,
+  cp.category3,
+  cp.category4,
+  l.city,
+  l.country,
+  l.postal_code,
+  l.market_segment_type0,
+  l.market_segment_type1,
+  l.market_segment_type2,
+  l.market_segment_type3
+FROM `{BQ_DATASET}.Locations` l
+LEFT JOIN `{BQ_DATASET}.CatalogProducts` cp
+  ON l.fyre_id = cp.fyre_id
+LEFT JOIN `{BQ_DATASET}.OrderItems` oi
+  ON oi.fyre_id = cp.fyre_id
+ AND oi.catalog_id = cp.catalog_id
+ AND oi.product_ref = cp.product_ref
+ AND oi.sku_ref = cp.sku_ref
+WHERE l.fyre_id IN UNNEST(@fyre_ids)
+  AND DATE(oi.created_at) >= @date_start
+  AND DATE(oi.created_at) <= @date_end
+""".strip()
+
+
+def _premium_query_sql_by_country():
+    return f"""
+SELECT
+  l.fyre_id,
+  oi.order_id,
+  oi.price,
+  oi.subtotal,
+  oi.guests_count,
+  oi.quantity,
+  oi.created_at,
+  cp.brand,
+  cp.owner,
+  cp.category0,
+  cp.category1,
+  cp.category2,
+  cp.category3,
+  cp.category4,
+  l.city,
+  l.country,
+  l.postal_code,
+  l.market_segment_type0,
+  l.market_segment_type1,
+  l.market_segment_type2,
+  l.market_segment_type3
+FROM `{BQ_DATASET}.Locations` l
+LEFT JOIN `{BQ_DATASET}.CatalogProducts` cp
+  ON l.fyre_id = cp.fyre_id
+LEFT JOIN `{BQ_DATASET}.OrderItems` oi
+  ON oi.fyre_id = cp.fyre_id
+ AND oi.catalog_id = cp.catalog_id
+ AND oi.product_ref = cp.product_ref
+ AND oi.sku_ref = cp.sku_ref
+WHERE l.country = @country
+  AND DATE(oi.created_at) >= @date_start
+  AND DATE(oi.created_at) <= @date_end
+""".strip()
+
+
+def _bq_fetch_premium_rows_by_outlets(fyre_ids: list[str], date_start: date, date_end: date) -> list[dict]:
+    client = _bq_client()
+    job_config = bigquery.QueryJobConfig(
+        query_parameters=[
+            bigquery.ArrayQueryParameter("fyre_ids", "STRING", fyre_ids),
+            bigquery.ScalarQueryParameter("date_start", "DATE", str(date_start)),
+            bigquery.ScalarQueryParameter("date_end", "DATE", str(date_end)),
+        ]
+    )
+    query = _premium_query_sql_by_outlets()
+    res = client.query(query, job_config=job_config).result()
+    rows=[]
+    for row in res:
+        rows.append({k: row.get(k) for k in row.keys()})
+    return rows
+
+
+def _bq_fetch_premium_rows_by_country(country: str, date_start: date, date_end: date) -> list[dict]:
+    client = _bq_client()
+    job_config = bigquery.QueryJobConfig(
+        query_parameters=[
+            bigquery.ScalarQueryParameter("country", "STRING", country.upper()),
+            bigquery.ScalarQueryParameter("date_start", "DATE", str(date_start)),
+            bigquery.ScalarQueryParameter("date_end", "DATE", str(date_end)),
+        ]
+    )
+    query = _premium_query_sql_by_country()
+    res = client.query(query, job_config=job_config).result()
+    rows=[]
+    for row in res:
+        rows.append({k: row.get(k) for k in row.keys()})
+    return rows
 
 def _sales_query_sql_by_outlets():
     return f"""
@@ -231,6 +364,29 @@ def load_patterns_for_country(db: Session, country_code: str):
             "country_profile": p.country_code,
             "dimensions": dims,
         })
+    return out
+
+
+def load_premium_profile_for_country(db: Session, country_code: str) -> Optional[dict]:
+    prof = (
+        db.query(PremiumProfile)
+        .filter(PremiumProfile.country_code == country_code)
+        .order_by(PremiumProfile.profile_id.asc())
+        .first()
+    )
+    if not prof:
+        return None
+    try:
+        return json.loads(prof.config_json)
+    except Exception:
+        return None
+
+
+def load_premium_percentiles(db: Session, country_code: str) -> dict:
+    rows = db.query(PremiumTicketPercentiles).filter(PremiumTicketPercentiles.country_code == country_code).all()
+    out: dict[str, tuple[float, float, float]] = {}
+    for r in rows:
+        out[r.segment_key] = (float(r.p50), float(r.p80), float(r.p95))
     return out
 
 # ---------- Pages ----------
@@ -997,3 +1153,234 @@ async def run_score(
             tmp_dir.rmdir()
         except Exception:
             pass
+
+
+# ---------- Premiumisation UI & API ----------
+
+
+@app.get("/premiumisation", response_class=HTMLResponse)
+def premiumisation_page(request: Request, country: str = "FR"):
+    db = db_session()
+    try:
+        countries = db.query(Country).order_by(Country.code.asc()).all()
+        prof = db.query(PremiumProfile).filter(PremiumProfile.country_code == country.upper()).first()
+        prof_json = prof.config_json if prof else ""
+        pct_rows = db.query(PremiumTicketPercentiles).filter(PremiumTicketPercentiles.country_code == country.upper()).all()
+        return templates.TemplateResponse(
+            "premiumisation.html",
+            {
+                "request": request,
+                "countries": countries,
+                "selected_country": country.upper(),
+                "profile_json": prof_json,
+                "percentiles": pct_rows,
+            },
+        )
+    finally:
+        db.close()
+
+
+@app.get("/premiumisation/api/profile")
+def get_premium_profile(country: str = "FR"):
+    db = db_session()
+    try:
+        prof = db.query(PremiumProfile).filter(PremiumProfile.country_code == country.upper()).first()
+        return {"country": country.upper(), "profile": json.loads(prof.config_json) if prof else None}
+    finally:
+        db.close()
+
+
+@app.post("/premiumisation/api/profile/save")
+def save_premium_profile(country: str = Form(...), profile_json: str = Form(...)):
+    db = db_session()
+    try:
+        cc = country.upper()
+        parsed = json.loads(profile_json)
+        profile_id = parsed.get("profile_id") or f"{cc}_v1"
+        label = parsed.get("label") or ""
+        existing = db.query(PremiumProfile).filter(PremiumProfile.country_code == cc, PremiumProfile.profile_id == profile_id).first()
+        if existing:
+            existing.label = label
+            existing.config_json = json.dumps(parsed, ensure_ascii=False)
+        else:
+            db.add(PremiumProfile(country_code=cc, profile_id=profile_id, label=label, config_json=json.dumps(parsed, ensure_ascii=False)))
+        db.commit()
+        return {"ok": True, "country": cc, "profile_id": profile_id}
+    finally:
+        db.close()
+
+
+@app.post("/premiumisation/api/profile/import")
+async def import_premium_profile(file: UploadFile = File(...)):
+    raw = (await file.read()).decode("utf-8", errors="ignore")
+    data = json.loads(raw)
+    profiles = data if isinstance(data, list) else [data]
+    db = db_session()
+    try:
+        count = 0
+        for p in profiles:
+            cc = str(p.get("country_iso2") or p.get("country") or "").upper()
+            if not cc:
+                continue
+            pid = str(p.get("profile_id") or f"{cc}_v1")
+            label = str(p.get("label") or "")
+            existing = db.query(PremiumProfile).filter(PremiumProfile.country_code == cc, PremiumProfile.profile_id == pid).first()
+            if existing:
+                existing.label = label
+                existing.config_json = json.dumps(p, ensure_ascii=False)
+            else:
+                db.add(PremiumProfile(country_code=cc, profile_id=pid, label=label, config_json=json.dumps(p, ensure_ascii=False)))
+            count += 1
+        db.commit()
+        return {"ok": True, "imported": count}
+    finally:
+        db.close()
+
+
+@app.post("/premiumisation/api/percentiles/recompute")
+def recompute_percentiles(req: PremiumRecomputePercentilesRequest):
+    _require_bigquery()
+    client = _bq_client()
+    country = req.country.upper()
+
+    sql = f"""
+WITH tickets AS (
+  SELECT
+    l.country AS country,
+    LOWER(CONCAT(
+      COALESCE(l.market_segment_type0,''),' > ',
+      COALESCE(l.market_segment_type1,''),' > ',
+      COALESCE(l.market_segment_type2,''),' > ',
+      COALESCE(l.market_segment_type3,'')
+    )) AS segment_key,
+    oi.order_id AS order_id,
+    SUM(oi.subtotal) AS ticket_value
+  FROM `{BQ_DATASET}.Locations` l
+  LEFT JOIN `{BQ_DATASET}.CatalogProducts` cp
+    ON l.fyre_id = cp.fyre_id
+  LEFT JOIN `{BQ_DATASET}.OrderItems` oi
+    ON oi.fyre_id = cp.fyre_id
+   AND oi.catalog_id = cp.catalog_id
+   AND oi.product_ref = cp.product_ref
+   AND oi.sku_ref = cp.sku_ref
+  WHERE l.country = @country
+    AND DATE(oi.created_at) >= @date_start
+    AND DATE(oi.created_at) <= @date_end
+    AND oi.order_id IS NOT NULL
+  GROUP BY country, segment_key, order_id
+),
+seg AS (
+  SELECT
+    country,
+    segment_key,
+    APPROX_QUANTILES(ticket_value, 100)[OFFSET(50)] AS p50,
+    APPROX_QUANTILES(ticket_value, 100)[OFFSET(80)] AS p80,
+    APPROX_QUANTILES(ticket_value, 100)[OFFSET(95)] AS p95
+  FROM tickets
+  GROUP BY country, segment_key
+),
+allc AS (
+  SELECT
+    country,
+    'country_all' AS segment_key,
+    APPROX_QUANTILES(ticket_value, 100)[OFFSET(50)] AS p50,
+    APPROX_QUANTILES(ticket_value, 100)[OFFSET(80)] AS p80,
+    APPROX_QUANTILES(ticket_value, 100)[OFFSET(95)] AS p95
+  FROM tickets
+  GROUP BY country
+)
+SELECT * FROM seg
+UNION ALL
+SELECT * FROM allc
+""".strip()
+
+    job_config = bigquery.QueryJobConfig(
+        query_parameters=[
+            bigquery.ScalarQueryParameter("country", "STRING", country),
+            bigquery.ScalarQueryParameter("date_start", "DATE", str(req.date_start)),
+            bigquery.ScalarQueryParameter("date_end", "DATE", str(req.date_end)),
+        ]
+    )
+    res = client.query(sql, job_config=job_config).result()
+    rows = [{k: row.get(k) for k in row.keys()} for row in res]
+
+    db = db_session()
+    try:
+        for r in rows:
+            seg_key = str(r.get("segment_key") or "").strip().lower()
+            if not seg_key:
+                continue
+            p50 = float(r.get("p50") or 0)
+            p80 = float(r.get("p80") or 0)
+            p95 = float(r.get("p95") or 0)
+            existing = db.query(PremiumTicketPercentiles).filter(
+                PremiumTicketPercentiles.country_code == country,
+                PremiumTicketPercentiles.segment_key == seg_key,
+            ).first()
+            if existing:
+                existing.p50 = p50
+                existing.p80 = p80
+                existing.p95 = p95
+            else:
+                db.add(PremiumTicketPercentiles(country_code=country, segment_key=seg_key, p50=p50, p80=p80, p95=p95))
+        db.commit()
+        return {"ok": True, "country": country, "rows": len(rows)}
+    finally:
+        db.close()
+
+
+@app.post("/premiumisation/api/score/by-outlets")
+def premium_score_by_outlets(req: PremiumByOutletsRequest):
+    _require_bigquery()
+    rows = _bq_fetch_premium_rows_by_outlets(req.fyre_ids, req.date_start, req.date_end)
+    if not rows:
+        return {"ok": True, "results": {}}
+    by_outlet: dict[str, list[dict]] = {}
+    for r in rows:
+        fid = str(r.get("fyre_id") or "")
+        if fid:
+            by_outlet.setdefault(fid, []).append(r)
+
+    db = db_session()
+    try:
+        results = {}
+        for fid, rws in by_outlet.items():
+            country = str((rws[0] or {}).get("country") or "").upper()
+            prof = load_premium_profile_for_country(db, country)
+            if not prof:
+                results[fid] = {"error": f"No premium profile for country {country}"}
+                continue
+            pct = load_premium_percentiles(db, country)
+            res = score_outlet(rws, prof, pct)
+            results[fid] = res.__dict__
+        return {"ok": True, "results": results}
+    finally:
+        db.close()
+
+
+@app.post("/premiumisation/api/score/by-country")
+def premium_score_by_country(req: PremiumByCountryRequest):
+    _require_bigquery()
+    rows = _bq_fetch_premium_rows_by_country(req.country, req.date_start, req.date_end)
+    if not rows:
+        return {"ok": True, "results": {}}
+    by_outlet: dict[str, list[dict]] = {}
+    for r in rows:
+        fid = str(r.get("fyre_id") or "")
+        if fid:
+            by_outlet.setdefault(fid, []).append(r)
+
+    db = db_session()
+    try:
+        country = req.country.upper()
+        prof = load_premium_profile_for_country(db, country)
+        if not prof:
+            return {"ok": False, "error": f"No premium profile for country {country}"}
+        pct = load_premium_percentiles(db, country)
+        results = {}
+        for fid, rws in by_outlet.items():
+            res = score_outlet(rws, prof, pct)
+            results[fid] = res.__dict__
+        return {"ok": True, "results": results}
+    finally:
+        db.close()

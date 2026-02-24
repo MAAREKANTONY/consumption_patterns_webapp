@@ -1,0 +1,7856 @@
+{
+  "profile_id": "FR_v1",
+  "country_iso2": "FR",
+  "label": "France — Premiumisation (sample)",
+  "brand_reference": {
+    "levels": {
+      "Mainstream": {
+        "score": 1.0
+      },
+      "Premium": {
+        "score": 2.0
+      },
+      "Prestige": {
+        "score": 3.0
+      }
+    },
+    "brands": [
+      {
+        "brand": "7 Deugden",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Almasty Brewing",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Autodrop",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "BOS",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "BRLO",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Ballygowan",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Ben & Jerry's",
+        "level": "Mainstream/Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Benediktiner",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Blossom Hill",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Bootz",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Brooklyn Brewery",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Brouwdok",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Brouwerij 't IJ",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Brouwerij Troost",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "C&C Cola",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Cacolac",
+        "level": "Mainstream/Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Calippo",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Camden Town",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Carte d'Or",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Chaudfontaine",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Cornetto",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Davo",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "De 7de Hemel",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "De Eeuwige Jeugd",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "De Kaapse Brouwers",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "De Kuyper",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "De Leckere",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "De Molen",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "De Prael",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Demory",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Doritos",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Du Bocq",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Dubuisson",
+        "level": "Premium/Prestige",
+        "weight": 1.0
+      },
+      {
+        "brand": "Durs",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Echo Falls",
+        "level": "Mainstream/Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Eggens",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Equilibrium Brewery",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Festini",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Fierce Beer",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Filou",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Fuerst Wiacek",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Gallo Family",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Galway Bay Brewery",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Gebrouwen Door Vrouwen",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Ginette",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Grisette",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Haacht",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Hacker-Pschorr",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Hapkin",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Hardy's",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Hardys Stamp",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Haribo",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Harrogate",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Heinz",
+        "level": "Nan",
+        "weight": 1.0
+      },
+      {
+        "brand": "Hert Bier",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Hildon",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Hofbräuhaus Hell",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Homeland",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Hopworks Brewery",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Hotcemel",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Häagen-Dazs",
+        "level": "Premium/Prestige",
+        "weight": 1.0
+      },
+      {
+        "brand": "Ice Pops 4 Friends",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Ijsboerke Confetti Push Up",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Ijsbomb",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Iki",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Illy",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Jacob's Creek",
+        "level": "Mainstream/Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Jopen",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "KRNWTR+",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Kasteel",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Kinder",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Kumala",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "La Linda",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Lavazza",
+        "level": "Mainstream/Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Lay's",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Lowlander",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Löwenbräu",
+        "level": "Mainstream/Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Magnum",
+        "level": "Mainstream/Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Mars",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "McGuigan",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Miko",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Movenpick",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Naeckte Brouwers",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "O'Hara's",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Ola",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Ondersteboven",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Oyster Bay",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Pimpelmeesch",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Poesiat & Kater",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Pueblo Viejo",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Raket",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Rothaus",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Scavi & Ray",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Schatkist",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Schelde Brouwerij",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Schlenkerla",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Siegfried Rheinland",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Six Point",
+        "level": "Mainstream/Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Sneker Pypke",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Snickers",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Solero",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Spa",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Split",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Starbucks",
+        "level": "Mainstream/Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Steenbrugge",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Stormhoek",
+        "level": "Mainstream/Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Sutton Hill",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Ter Dolen",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Terrazas De Los Andes",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Terre Del Noce",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Tete de Mort",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Texels",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Trooper",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Tuborg",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Twister",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Twix",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Two Chefs Brewing",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Uiltje Brewing",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Van Moll",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "VandeOirsprong",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "VandeStreek",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Vedett",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Veluwse Schavuyt",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Vet & Lazy",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Viven",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Vocation",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Vulcaan",
+        "level": "Mainstream/Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Walhalla",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Wispe",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Wolf Blass",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Zeeuws",
+        "level": "Mainstream/Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Zuidam",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "10 Barrel Brewing",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "100 Watt",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Abbott Ale",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Arpus Brewing Co.",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Banks's",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Basqueland",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Bateman's",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Beavertown",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Belhaven",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Bird Brewery",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Black Sheep",
+        "level": "Mainstream/Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Blind Pig",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Blue Point Brewing",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Boddingtons",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Brains",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Brakspear",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "BrewDog",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Brixton",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Brothers in Law",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Bruut",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Buckley's",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Caffreys",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Caledonia",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Charles Wells",
+        "level": "Mainstream/Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Climax",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Cloudwater",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Courage",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Dutch Bargain",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "ESB (Extra Special Bitter)",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Elysian Brewing",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Emelisse",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Everards",
+        "level": "Mainstream/Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Felinfoel",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Ferret",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Flying Chicken",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Flying Dutchman",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Folkingebrew",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Founders",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Four Peaks Brewing",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Frontaal",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Fuller's",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Funky Fluid",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Giraf",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Golden Road Brewing",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Goose Island",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Graansilo",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Greene King",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Grevensteiner",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Grutte Pier",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Guilty Monkey",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Harveys",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Hermit",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Hobgoblin",
+        "level": "Mainstream/Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Holt's",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Hommel",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Hommeles",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Hooglander",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Hook Norton",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Hopus",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Hydes",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Innis & Gunn",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Jennings",
+        "level": "Mainstream/Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "John Smith's",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Karbach Brewing",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Kees",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Kelham Island",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Kilkenny",
+        "level": "Mainstream/Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Kinnegar",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Kompaan",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "KraftBier",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Kromme Haring",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "La Sagra Brewery",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Lagunitas",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Lervig",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "London Pride",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Lupulus",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Magic Rock",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Magnet",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Maltsmiths",
+        "level": "Mainstream/Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Manns",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Marston's",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Marstons",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Martin's",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Meantime",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Moersleutel",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Monteiths",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Morland",
+        "level": "Mainstream/Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Newcastle",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Ninkasi",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Noordt",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Northern Monk",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Oedipus",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Oersoep",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Old Speckled Hen",
+        "level": "Mainstream/Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Omnipollo",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Open Gate",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Oproer",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Oudaen",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Palm",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Pohjala",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Pressure Drop",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Rascals",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Red Rock Ales",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Ruddles",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Samuel Smith's",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Sharp's",
+        "level": "Mainstream/Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Shepherd Neame",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Siren",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Skands",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "St Austell",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Stijl",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Stone",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Summit",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Tetley's",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Theakston",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Thornbridge",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Thwaites",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Timothy Taylor's",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Tiny Rebel",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Tribute",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Urthel",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Wadworth",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Wainwright Gold",
+        "level": "Mainstream/Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Wells",
+        "level": "Mainstream/Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Wild Card",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Worthington's",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Wychwood",
+        "level": "Mainstream/Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Young's",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Antica",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Casanis",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Cristal Anis",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Henri Bardouin",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Isolabella",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Molinari",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Pastis 51",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Pernod",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Ricard",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Yeni",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "30&40",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Angostura",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Aperol",
+        "level": "Mainstream/Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Averna",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Avèze",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Campari",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Carpano",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Cinzano",
+        "level": "Mainstream/Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Cynar",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Fernet-Branca",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Lillet",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Martini",
+        "level": "Mainstream/Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Picon",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Ramazzotti",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Schipperbitter",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "St Raphaël",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Suze",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Underberg",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Vecchio Amaro del Capo",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Desperados",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Panach",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Achel",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Affligem",
+        "level": "Mainstream/Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Augustijn",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Averbode",
+        "level": "Mainstream/Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Belzebuth",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Bon Secours",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Brigand",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Brugge Tripel",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Brugse Zot",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Burning Sky",
+        "level": "Premium/Prestige",
+        "weight": 1.0
+      },
+      {
+        "brand": "Bush",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Chimay",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Ciney",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Cornet",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Corsendonk",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Dampegheest",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "De Koninck",
+        "level": "Mainstream/Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "De Werf",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Delirium",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Duval",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Duvel",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Ename",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Floreffe",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Goblet",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Goliath",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Gouden Carolus",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Gouverneur",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Grimbergen",
+        "level": "Mainstream/Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Guillotine",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Gulden Draak",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Judas",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Kapittel",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Karmeliet",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Keizer Karel",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Klootzakske",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Kwak",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Kwaremont",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "La Chouffe",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "La Corne",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "La Goudale",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "La Guillotine",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "La Trappe",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Le Fort",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Leffe",
+        "level": "Mainstream/Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Malheur",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Maneblusser",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Maredsous",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Martha",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Moeder Overste",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Nathals",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Omer",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Orval",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Paix Dieu",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Pater Linus",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Piraat",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Rince Cochon",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Rochefort",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Rolduc",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Roze Bunker",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Ruwet",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Saint-Feuillien",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Sancti Adalberti",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Schuppenboer",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Slaapmutske",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "St Feuillien",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "St Stefanus",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "St. Bernardus",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Straffe Hendrik",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Tank 7",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Taras Boulba",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Tongerlo",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Troubadour",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Tynt Meadow",
+        "level": "Premium/Prestige",
+        "weight": 1.0
+      },
+      {
+        "brand": "Val-Dieu",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Waterloo",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Westmalle",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Westvleteren",
+        "level": "Premium/Prestige",
+        "weight": 1.0
+      },
+      {
+        "brand": "Wieze",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Wilderen",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Witkap",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Wolf",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Zeezuiper",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Zundert",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Alexander",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Baron de Lestac",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Camus",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Cognac Bourgoin",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Cognac Dhiersat",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Courvoisier",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Darroze",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Delaitre",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Delamain",
+        "level": "Super Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Dujardin",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Frapin",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Hennessy",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Hine",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Janneau",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Joseph Guy",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Laballe",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Lamothe Parrot",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Laubade",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Lhéraud",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Louis XIII",
+        "level": "Super Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Macieira Brandy",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Maison Gautier",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Manguin",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Martell",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Metaxa",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Napoleon Brandy",
+        "level": "Premium/Prestige",
+        "weight": 1.0
+      },
+      {
+        "brand": "Quaglia",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Rémy Martin",
+        "level": "Premium/Prestige",
+        "weight": 1.0
+      },
+      {
+        "brand": "St Rémy",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Stock",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Vecchia Romagna",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "3 Cents",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "7Up",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Almdudler",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Appletiser",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Barr",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Belvoir",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Bionade",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Bundaberg",
+        "level": "Mainstream/Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Canada Dry",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Cherryade",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Coca-Cola",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Crabbie's",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Cream Soda",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Crodino",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Crush",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Crystal Clear",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Dandelion & Burdock",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Double Dutch",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Dr Pepper",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Elixia",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Fanta",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Fentimans",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Fever Tree",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Finley",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Franklin & Sons",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "French Tonic",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Frisko",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Fritz",
+        "level": "Mainstream/Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Galvanina",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Gini",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Guaraná Antarctica",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Hero",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Irn-Bru",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Jarritos",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "KAS",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Kinley",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Lilt",
+        "level": "Mainstream/Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Lorina",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Manzanita",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Mirinda",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Naturfrisk",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "On Lemon",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Orangina",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Organics by Red Bull",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Panda Pops",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Pepsi",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Pimento",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "R. White's",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Ramune",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Rivella",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Royal Bliss",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Royal Club",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Russel & Co",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Schweppes",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Sinalco",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Sisi",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Sprite",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Tango",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "The London Essence",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Thomas Henry",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Tizer",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Van Kempen",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Wostok",
+        "level": "Premium/Prestige",
+        "weight": 1.0
+      },
+      {
+        "brand": "Xtra",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Freixenet",
+        "level": "Mainstream/Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "MVSA",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "André",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Armand de Brignac",
+        "level": "Super Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Barons de Rothschild",
+        "level": "Super Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Besserat de Bellefon",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Billecart Salmon",
+        "level": "Prestige",
+        "weight": 1.0
+      },
+      {
+        "brand": "Bonneval",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Castelnau",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Champagne Agrapart et Fils",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Champagne Ayala",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Champagne Bollinger",
+        "level": "Prestige",
+        "weight": 1.0
+      },
+      {
+        "brand": "Champagne Canard-Duchêne",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Champagne Collet",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Champagne Delamotte",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Champagne Devaux",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Champagne Drappier",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Champagne EPC",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Champagne Henriot",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Charles Heidsieck",
+        "level": "Super Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Cristal",
+        "level": "Super Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Deutz",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Dom Pérignon",
+        "level": "Super Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Dumanet",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Duval-Leroy",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "G.H. Mumm",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Gosset",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Henri Abelé",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Joseph Perrier",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Krug",
+        "level": "Super Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "La Grande Dame",
+        "level": "Super Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Lanson",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Laurent Perrier",
+        "level": "Premium/Prestige",
+        "weight": 1.0
+      },
+      {
+        "brand": "Louis Roederer",
+        "level": "Premium/Prestige",
+        "weight": 1.0
+      },
+      {
+        "brand": "Mercier",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Moët & Chandon",
+        "level": "Premium/Prestige",
+        "weight": 1.0
+      },
+      {
+        "brand": "Mumm",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Nicolas Feuillatte",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Perrier-Jouët",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Piper-Heidsieck",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Pol Roger",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Pommery",
+        "level": "Premium/Prestige",
+        "weight": 1.0
+      },
+      {
+        "brand": "Ruinart",
+        "level": "Super Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Taittinger",
+        "level": "Premium/Prestige",
+        "weight": 1.0
+      },
+      {
+        "brand": "Telmont",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Thiénot",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Veuve Clicquot",
+        "level": "Premium/Prestige",
+        "weight": 1.0
+      },
+      {
+        "brand": "Veuve Pelletier",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Veuve Renard de Beaumont",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Vranken",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Chocomel",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Apple Bandit",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Aspall",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Bishops Tipple",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Brothers",
+        "level": "Mainstream/Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Bulmers",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Cornish Orchards",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Dupont",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Galipette",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Healeys",
+        "level": "Mainstream/Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Inchs",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Jillz",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Kopparberg",
+        "level": "Mainstream/Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Loïc Raison",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Magners",
+        "level": "Mainstream/Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Merrydown",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Old Mout",
+        "level": "Mainstream/Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Orchard Pig",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Orchard Thieves",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Rekorderlig",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Savanna",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Scrumpy Jack",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Silly Moo Cider",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Somersby",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Stassen",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Stowford Press",
+        "level": "Mainstream/Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Strongbow",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Symonds",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Thatchers",
+        "level": "Mainstream/Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Westons",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Woodpecker",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Grandin",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Langlois",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Luc Belaire",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Perle Pélican",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Guinness",
+        "level": "Mainstream/Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "In De Nacht",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Murphy's",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Willy Tonka",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Nespresso",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Nuii",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Optimel",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Barros",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Bodega Lustau",
+        "level": "Premium/Prestige",
+        "weight": 1.0
+      },
+      {
+        "brand": "Croft",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Domecq",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Dow's",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Fonseca",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Graham's",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Kopke",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Offley",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Osborne",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Pedro Ximenez",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Porto Cruz",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Sandeman",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Taylor's",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Tio Pepe",
+        "level": "Premium/Prestige",
+        "weight": 1.0
+      },
+      {
+        "brand": "Wild Irish Rose",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Gimber",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Fristi",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Vifit",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "AA Drink",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Aquarius",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Batu",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Bewiz",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Boost",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Bullit",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Butcha",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Club-Maté",
+        "level": "Mainstream/Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Emerge",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Energise",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Extran",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Extreme",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Feel So Good",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Gatorade",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Golden Power",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Lucozade",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Mojo Maté",
+        "level": "Mainstream/Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Monster Energy",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "O2Life",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Powerade",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "RX",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Red Bull",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Relentless",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Rockstar",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Rush",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Slammers Energy",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Sourcy Vitamin Water",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Thrive",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Titan",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "VitHit",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Vitamin Well",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "A. Van Wees",
+        "level": "Mainstream/Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "And Union",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Aviation",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Bareksten",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Bazar",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Beefeater",
+        "level": "Mainstream/Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Blackwoods",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Bloom",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Blowing Stone",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Bobby's",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Bokma",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Bols",
+        "level": "Mainstream/Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Bombay Sapphire",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Boomsma",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Bradley's",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Brockmans",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Bulldog",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Cambridge Gin",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Caorunn",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Citadelle",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Copperhead",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Cotswolds",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Crafters",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Damrak",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Darnley's View",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Death's Door",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Dodd's",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Dutch Courage",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Edinburgh Gin",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Eelaart",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Elephant",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Filliers",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Floryn",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Fords",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Forest Gin",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Four Pillars Gin",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "G'vine",
+        "level": "Premium/Prestige",
+        "weight": 1.0
+      },
+      {
+        "brand": "Gallivant",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Generous Gin",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Gibson's",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Gin Mare",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Gin Sul",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Gin d'Azur",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Gordon's",
+        "level": "Mainstream/Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Greenall’s",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Gunpowder",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Hartevelt",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Hayman's",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Hendrick's",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Hooghoudt",
+        "level": "Mainstream/Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Hopkin's",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Hoppe",
+        "level": "Mainstream/Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Isle of Harris",
+        "level": "Premium/Prestige",
+        "weight": 1.0
+      },
+      {
+        "brand": "JJ Whitley",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Jajem",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Jensen's",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Jinzu",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Ketel 1",
+        "level": "Mainstream/Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Ki No Bi",
+        "level": "Premium/Prestige",
+        "weight": 1.0
+      },
+      {
+        "brand": "King of Soho",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Langley's",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Larios",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Loopuyt",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Malfy",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Martin Miller's",
+        "level": "Premium/Prestige",
+        "weight": 1.0
+      },
+      {
+        "brand": "Monkey 47",
+        "level": "Premium/Prestige",
+        "weight": 1.0
+      },
+      {
+        "brand": "No. 3",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Nobeltje",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Nolet",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Nordes",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Opihr",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Oxley",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Plymouth",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Puerto De Indias",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Ricks / RX Dutch Gin",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Roku",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Rutte",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Silent Pool",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Sipsmith",
+        "level": "Premium/Prestige",
+        "weight": 1.0
+      },
+      {
+        "brand": "Tanqueray",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Tarquin's",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "The Botanist",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "The Duchess",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Thomas Dakin",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "V2C",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Vording's",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Warner Edwards",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Whitley Neill",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Wynand Focking",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Bozu",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Fizz",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Frank Seltzer",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "GiG",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Stëlz",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Topo Chico",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Viper",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "White Claw",
+        "level": "Mainstream/Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Amaretto Adriatico",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Amarula",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Amici",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Apenshot",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Bacchus",
+        "level": "Mainstream/Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Bahia",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Baileys",
+        "level": "Mainstream/Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Belle de Brillet",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Bello",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Berentzen",
+        "level": "Mainstream/Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "BorrelNoot",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Boswandeling",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Café Marakesh",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Chambord",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Chartreuse",
+        "level": "Prestige",
+        "weight": 1.0
+      },
+      {
+        "brand": "Coebergh",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Cointreau",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "D.O.M. Benedictine",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Dark Mark",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Devil Shot",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Disaronno",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Dolphin",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Drambuie",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Dropshot",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Dutch Drop",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Dutch Dynamite",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Feigling",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Fireman",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Flugel",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Frangelico",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Galliano",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Get",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Gold Strike",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Grand Marnier",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Irish Mist",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Italicus",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Jachtbitter",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Joseph Cartron",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Juttertje",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Jägermeister",
+        "level": "Mainstream/Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Kahlúa",
+        "level": "Mainstream/Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Koetje",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Kontiki",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Licor 43",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Luxardo",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Marie Brizard",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Midori",
+        "level": "Mainstream/Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Monkey Balls",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Nozem Oil",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Palermo",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Pallini",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Passoa",
+        "level": "Mainstream/Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Peachtree",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Pimm's",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Pisang Ambon",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Rocketshot",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Safari",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Salmari",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Schrobbeler",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Sheridan's",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Sonnema",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Sourz",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Southern Comfort",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "St Germain",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Tia Maria",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Umeshu",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Van Kleef",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Villa Massa",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Warninks",
+        "level": "Mainstream/Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Weduwe Joustra",
+        "level": "Mainstream/Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Wenneker",
+        "level": "Mainstream/Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Zwarte Kip",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Big Drop Brewing Co.",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Buckler",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Lucky Saint",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Tourtel",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Tourtel Twist",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Ceder's",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Everleaf",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Nona",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Seedlip",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Bellavista",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Chandon",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Jaume Serra",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Nyetimber",
+        "level": "Premium/Prestige",
+        "weight": 1.0
+      },
+      {
+        "brand": "Avallen Calvados",
+        "level": "Premium/Prestige",
+        "weight": 1.0
+      },
+      {
+        "brand": "Berne",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Berta",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Boukha Bokobsa",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Busnel",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Christian Drouin",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Domaine du Coquerel",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Jade",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Leblon",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Mei Kuei Lu Chiew",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Nonino",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Nusbaumer",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Poli",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "1664",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "8.6",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Aguila",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Alfa",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Alhambra",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Amstel",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Ancres Pils",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Angelo Poretti",
+        "level": "Mainstream/Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Antarctica",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Arend",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Asahi",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Astra",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Baltika",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Bavaria",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Bavik",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Bear",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Beck's",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Beer Bazaar",
+        "level": "Mainstream/Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Beukenhorst",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Bintang",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Birra Moretti",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Bitburger",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Brahma",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Brand",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Brand Garage",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Branie",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Brasil",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Breugem",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Broeder Jacob",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Bud Budvar",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Budels",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Budweiser",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Busch",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Carling",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Carlsberg",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Carlton Draught",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Carlton Dry",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Cass",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Chang",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Claro",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Club Colombia",
+        "level": "Mainstream/Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Cobra",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Coors",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Corona",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Cristal Alken",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Crown Lager",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Cruzcampo",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Czech Mates",
+        "level": "Mainstream/Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Derbes",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Dommelsch",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Dreher",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Ebisu",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Enigma",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Estaminet",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Estrella Damm",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Estrella De Levante",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Estrella Galicia",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Falcon",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Fischer",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Fosters",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Frontier",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Great Northern",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Grolsch",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Gulpener",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Hasseröder",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Heineken",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Hertog Jan",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Holsten",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Hoya",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Ichnusa",
+        "level": "Mainstream/Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Jever",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Johann Burg",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Joker",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Jupiler",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Kaiser",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Kanterbrau",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Karlsbräu",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "King's",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Kingfisher",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Kirin",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Kleiburg",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Klein Duimpje",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Klok",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Klosterhof",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Kompel",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Kornuit",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Kozel",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Krombacher",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Kronenbourg",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Kukki",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "La Phénicienne",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "La Slavia",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Labatt Blue",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Lav",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Lech",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Leeghwater",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Leute",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Licorne",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Lindeboom",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Lübzer",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "MIP",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Maallust",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Maes",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Mahou",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Maximus",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Meijer",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Melbourne Bitter",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Menabrea",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Meteor",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Michelob",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Miller",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Mispelblom",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Modelo",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Moj",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Muifel",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Mythos",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Natural Light",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Okocim",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Olifant",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Olmenhorst",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Orion",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Pacifico",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Paljas",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Parade",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Parbo",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Peeze",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Pelforth",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Perelaere",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Perlino",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Peroni",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Phoenix",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Pit",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Poretti",
+        "level": "Mainstream/Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Pravha",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Primus",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Pripps Blå",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Prominent",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Pronol",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Pure Blonde",
+        "level": "Mainstream/Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Quilmes",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Red Stripe",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Reschs",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Ringnes",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Rock City",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Rogge",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Rolling Rock",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Ruhrgold",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Sagres",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Saigon",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Salitos",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "San Miguel Brewery",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Sapporo",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Singha",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Skoll",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Sol",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Star Lager",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Staropramen",
+        "level": "Mainstream/Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Stella Artois",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Super 8",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Super Bock",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Swinckels",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Tarani",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Tennent's",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Tesselaar",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Tiger",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Timișoreana",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Tiscaz",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Topvar",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "TsingTao",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Tulip",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Tusker",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Tyskie",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Urquell",
+        "level": "Mainstream/Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Ursus",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Velkopopovický Kozel",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Veltins",
+        "level": "Mainstream/Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Victoria",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Victoria Bitter (VB)",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Warsteiner",
+        "level": "Mainstream/Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Yebisu",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Zywiec",
+        "level": "Mainstream/Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Šariš",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Žatecký Gus",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Arla",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Campina",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Friesche vlag",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Melkan",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Melkunie",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Zuivelhoeve",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Alpro",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Oatly",
+        "level": "Mainstream/Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Silk",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Follador",
+        "level": "Mainstream/Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Archers & Lemonade",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Breezer",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Cutwater",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Hooch",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Ibiza Ice",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Reef",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "VK",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "WKD",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Antinori",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Bernardus",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Bokbunja",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Bosford",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Camino Real",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Carnivor",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Casa Silva",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Catena",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Chanson",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Chateau Souverain",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Cheval des Andes",
+        "level": "Super Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Coppola",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Courcel",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Culemborg",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Dada",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Domini",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Drostdy-Hof",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Ducasse",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Enate",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Epicuro",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Heinrich Naked",
+        "level": "Prestige",
+        "weight": 1.0
+      },
+      {
+        "brand": "Kaiken",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Lafite Rothschild",
+        "level": "Super Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Laurent Miquel",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Masi",
+        "level": "Premium/Prestige",
+        "weight": 1.0
+      },
+      {
+        "brand": "Massaya",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Monteclain",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Monterre",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Montes",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Mouton Rothschild",
+        "level": "Super Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Newton",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Nicolas Mariotti Bindi",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Norton",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Ormes de Pez",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Patrick Font",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Paul Romain",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Petrus",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Ramon Bilbao",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Robertson",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Roche Mazet",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Rothschild",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Salentein",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Santa Ana",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Santa Lucia",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Talbot Estate",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Tornatore",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Torres",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Trivento",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Urmeneta",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Vega Sicilia",
+        "level": "Super Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Vendange",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Venezzio",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Costa Coffee",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Douwe Egberts",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Kenco",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Aix",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Château D'Esclans",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Château Galoupet",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Château Minuty",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Domaine Ott",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Fontcreuse",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "La Gordonne",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Mirabeau",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Miraval",
+        "level": "Premium/Prestige",
+        "weight": 1.0
+      },
+      {
+        "brand": "Whispering Angel",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Abuelo",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Acayucan",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Aguacana",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Appleton Estate",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Bacardi",
+        "level": "Mainstream/Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Baie Des Trésors",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Bally",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Barbados",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Botran",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Brugal",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Bumbu",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Captain Morgan",
+        "level": "Mainstream/Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Centenario",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Clément",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Damoiseau",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Dead Man's Fingers",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Depaz",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Dillon",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Diplomático",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Don Papa",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "El Dorado",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Eminente",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Flor de Cana",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Gosling's",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "HSE",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Hamilton",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Havana Club",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "La Hechicera",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "La Martiniquaise",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "La Mauny",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Lamb's Navy",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Malibu",
+        "level": "Mainstream/Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Mount Gay",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Naga Rum",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Negrita",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "OVD",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Old Captain",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Old Monk",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Pacto Navio",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Pampero",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Plantation",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Père Labat",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Redleg",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Rhum Charette",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Rivière du Mât",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Sailor Jerry",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Saint James",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Skully",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Stroh",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "The Demon's Share",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "The Kraken",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Trois Rivières",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Woods",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Wray & Nephew",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Zacapa",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "HTK",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Honjozo",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Junmai",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Ozeki",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Sansachun",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Sho Chiku Bai",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Soju",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Umami",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Anaë",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Aqua Monaco",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Badoit",
+        "level": "Mainstream/Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Chateldon",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Ferrarelle",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Frizz",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Gerolsteiner",
+        "level": "Mainstream/Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Orezza",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Perrier",
+        "level": "Mainstream/Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Saint Géron",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "San Pellegrino",
+        "level": "Mainstream/Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Tönissteiner",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Vals",
+        "level": "Mainstream/Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "3 Fonteinen",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Alvinne",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Amundsen",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Bap Bap",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Barbar",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Belle Vue",
+        "level": "Mainstream/Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Berging",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Berliner",
+        "level": "Mainstream/Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Big Belly",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Boon",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Brasserie Lancelot",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Breizh",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Bronckhorster",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Brunehaut",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Captain Jack",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Coedo",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Cubanisto",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Duchesse de Bourgogne",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Floris",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Gallia",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Jacobins",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Jacobsen",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Jenlain",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "La Bête",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "La Mordue",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "La Parisienne",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Liefmans",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Lindemans",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Mikkeller Burst",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Mongozo",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Mort Subite",
+        "level": "Mainstream/Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Mystic",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Pietra",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Rodenbach",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Special Brew",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Timmermans",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Wicked Weed Brewing",
+        "level": "Premium/Prestige",
+        "weight": 1.0
+      },
+      {
+        "brand": "Zure Mattie",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Agroposta",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Alain Milliat",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Apfelschorle",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Appelaere",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Appelsientje",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Appie",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Big Tom",
+        "level": "Mainstream/Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Bottlegreen",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Britvic",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Capri Sun",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Caraïbos",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Ceres",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Champomy",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Coolbest",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Dubbeldrank",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Dubbelfris",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Elderflower Presse",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Fernandes",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Flevosap",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Fruit Shoot",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Granini",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Innocent",
+        "level": "Mainstream/Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "J2O",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "KA",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Karma",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Lemonaid",
+        "level": "Mainstream/Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Looza",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Luscombe",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Maaza",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Mangajo",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Minute Maid",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Mogu Mogu",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Mokai",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Naked",
+        "level": "Mainstream/Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Oasis",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Ocean Spray",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Pago",
+        "level": "Mainstream/Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Pampryl",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Perfect",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Pirulo",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Princes",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Pulco",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Raak",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Rauch",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Ribena",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Rubicon",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Sapje",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Schorle",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Schulp",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Shloer",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Slimpie",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Taksi",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Tropicana",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Tropico",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Twist and Drink",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Um Bongo",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Vimto",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Wicky",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Wow",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Abatilles",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Aqua Chiara",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Aqua Panna",
+        "level": "Mainstream/Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Bar-le-Duc",
+        "level": "Mainstream/Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Bru",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Carola",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Clover",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Contrex",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Cristaline",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Dalphin",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Earth",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Evian",
+        "level": "Mainstream/Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Fiji",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Jumbo",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Plancoët",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Purezza",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Pyla",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Rétha",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "San Benedetto",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "San Bernardo",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Sourcy",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Thonon",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Vittel",
+        "level": "Mainstream/Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Volvic",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Voss",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Walden",
+        "level": "Mainstream/Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Cool Bear",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Diluting Orange",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Karvan Cevitam",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Monin",
+        "level": "Mainstream/Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Ranja",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Robinson's",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Roosvicee",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Soof",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Kraanwater",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Barry's Tea",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Clipper",
+        "level": "Mainstream/Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "PG Tips",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Pickwick",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Senza",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Typhoo",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Yorkshire Tea",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Arizona",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "ChariTea",
+        "level": "Mainstream/Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Fuze Tea",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Honest",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Jomo",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Leamo",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Lipton",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Liptonic",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "May Tea",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Nestea",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Pure Leaf",
+        "level": "Mainstream/Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Thijs",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Thom's T",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "1800",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "400 Conejos",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Avión",
+        "level": "Super Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Casa Noble",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Casamigos",
+        "level": "Prestige",
+        "weight": 1.0
+      },
+      {
+        "brand": "Cazadores Blanco",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Clase Azul",
+        "level": "Prestige",
+        "weight": 1.0
+      },
+      {
+        "brand": "Del Maguey",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Don Julio",
+        "level": "Premium/Prestige",
+        "weight": 1.0
+      },
+      {
+        "brand": "El Jimador",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Espolon",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Fortaleza",
+        "level": "Premium/Prestige",
+        "weight": 1.0
+      },
+      {
+        "brand": "Herradura",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Jose Cuervo",
+        "level": "Mainstream/Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Maestro Dobel",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Noble Coyote",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Ocho",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Olmeca",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Olmeca Altos",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Patrón",
+        "level": "Premium/Prestige",
+        "weight": 1.0
+      },
+      {
+        "brand": "Rooster Rojo",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "San José",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Sauza",
+        "level": "Mainstream/Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Sierra",
+        "level": "Mainstream/Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Volcán",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "42 Below",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Absolut",
+        "level": "Mainstream/Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Beluga",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Belvedere",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Black Cow",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Chase",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Chopin",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Ciroc",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Eristoff",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Esbjaerg",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Finlandia",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Grey Goose",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Ketel One",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "La French",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Mandala",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Nemiroff",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Orloff",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Petrikov",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Poliakov",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Pravda",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Puschkin",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Reyka",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Scarlett",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Skyy",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Smirnoff",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Sobieski",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Soplica",
+        "level": "Mainstream/Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Stolichnaya",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Tito's",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Trojka",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Wyborowa",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Zubrowka",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Ayinger",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Baptist",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Blanche de Bruxelles",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Blijer",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Blue Moon",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Brugs Tarwebier",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Colomba",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Edelweiss",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Erdinger",
+        "level": "Mainstream/Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Franziskaner",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Hoegaarden",
+        "level": "Mainstream/Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "König Ludwig",
+        "level": "Mainstream/Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Maisel's",
+        "level": "Mainstream/Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Paulaner",
+        "level": "Mainstream/Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Schneider Weisse",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Shock Top",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Weihenstephaner",
+        "level": "Mainstream/Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Wieckse",
+        "level": "Mainstream/Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Witte Anker",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Wittekerke",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "A Singleton of Dufftown",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Aberfeldy",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Aberlour",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Akashi",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Ardbeg",
+        "level": "Premium/Prestige",
+        "weight": 1.0
+      },
+      {
+        "brand": "Ardmore",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Armorik",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Arran",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Auchentoshan",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Balblair",
+        "level": "Premium/Prestige",
+        "weight": 1.0
+      },
+      {
+        "brand": "Ballantine's",
+        "level": "Mainstream/Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Balvenie",
+        "level": "Premium/Prestige",
+        "weight": 1.0
+      },
+      {
+        "brand": "Basil Hayden",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Bell's",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Belle Meade",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Bellevoye",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Benriach",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Benromach",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Big Peat",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Black And White",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Bladnoch",
+        "level": "Premium/Prestige",
+        "weight": 1.0
+      },
+      {
+        "brand": "Blanton's",
+        "level": "Prestige",
+        "weight": 1.0
+      },
+      {
+        "brand": "Bowmore",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Bruichladdich",
+        "level": "Premium/Prestige",
+        "weight": 1.0
+      },
+      {
+        "brand": "Buffalo Trace",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Bulleit",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Bunnahabhain",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Bushmills",
+        "level": "Mainstream/Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Busker",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Canadian Club",
+        "level": "Mainstream/Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Caol Ila",
+        "level": "Premium/Prestige",
+        "weight": 1.0
+      },
+      {
+        "brand": "Cardhu",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Chita",
+        "level": "Premium/Prestige",
+        "weight": 1.0
+      },
+      {
+        "brand": "Chivas Regal",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Clan Campbell",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Clynelish",
+        "level": "Premium/Prestige",
+        "weight": 1.0
+      },
+      {
+        "brand": "Compass Box Whisky",
+        "level": "Premium/Prestige",
+        "weight": 1.0
+      },
+      {
+        "brand": "Connemara",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Copper Dog",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Cragganmore",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Craigellachie",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Crown Royal",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Cutty Sark",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Dalwhinnie",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Deanston",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Dewar's",
+        "level": "Mainstream/Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Dimple",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Eagle Rare",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Elijah Craig",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Evan Williams",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "FEW Spirits",
+        "level": "Premium/Prestige",
+        "weight": 1.0
+      },
+      {
+        "brand": "Finlaggan",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Fireball",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Flatnöse",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Four Roses",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Frysk Hynder",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Glen Elgin",
+        "level": "Premium/Prestige",
+        "weight": 1.0
+      },
+      {
+        "brand": "Glen Garioch",
+        "level": "Premium/Prestige",
+        "weight": 1.0
+      },
+      {
+        "brand": "Glen Grant",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Glen Moray",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Glen Scotia",
+        "level": "Premium/Prestige",
+        "weight": 1.0
+      },
+      {
+        "brand": "Glen Talloch",
+        "level": "Mainstream/Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Glen Turner",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "GlenAllachie",
+        "level": "Premium/Prestige",
+        "weight": 1.0
+      },
+      {
+        "brand": "GlenDronach",
+        "level": "Premium/Prestige",
+        "weight": 1.0
+      },
+      {
+        "brand": "Glendalough",
+        "level": "Premium/Prestige",
+        "weight": 1.0
+      },
+      {
+        "brand": "Glendronach",
+        "level": "Premium/Prestige",
+        "weight": 1.0
+      },
+      {
+        "brand": "Glenfarclas",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Glenfiddich",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Glenglassaugh",
+        "level": "Premium/Prestige",
+        "weight": 1.0
+      },
+      {
+        "brand": "Glenkinchie",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Glenlivet",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Glenmorangie",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Glenrothes",
+        "level": "Premium/Prestige",
+        "weight": 1.0
+      },
+      {
+        "brand": "Glenturret",
+        "level": "Premium/Prestige",
+        "weight": 1.0
+      },
+      {
+        "brand": "Grant's",
+        "level": "Mainstream/Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Haig Club",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Hakushu",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Hankey Bannister",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Hatozaki",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Hautes Glaces",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Hells stone",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Hibiki",
+        "level": "Super Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "High Commissioner",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Highland Park",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Isle of Skye",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "J&B",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Jack Daniel's",
+        "level": "Mainstream/Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Jameson",
+        "level": "Mainstream/Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Jim Beam",
+        "level": "Mainstream/Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Johnnie Walker",
+        "level": "Mainstream/Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Jura Whisky",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Kavalan",
+        "level": "Premium/Prestige",
+        "weight": 1.0
+      },
+      {
+        "brand": "Kilbeggan",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Kilchoman",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Knob Creek",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Knockando",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Label 5",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Lagavulin",
+        "level": "Premium/Prestige",
+        "weight": 1.0
+      },
+      {
+        "brand": "Laphroaig",
+        "level": "Premium/Prestige",
+        "weight": 1.0
+      },
+      {
+        "brand": "Ledaig",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Linkwood",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Loch Lomond",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Long John",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Longrow",
+        "level": "Premium/Prestige",
+        "weight": 1.0
+      },
+      {
+        "brand": "Maker's Mark",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Marker's Mark",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Michter's",
+        "level": "Prestige",
+        "weight": 1.0
+      },
+      {
+        "brand": "Millstone",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Miyagikyo",
+        "level": "Prestige",
+        "weight": 1.0
+      },
+      {
+        "brand": "Monkey Shoulder",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Mortlach",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Nikka",
+        "level": "Premium/Prestige",
+        "weight": 1.0
+      },
+      {
+        "brand": "Oban",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Octomore",
+        "level": "Prestige",
+        "weight": 1.0
+      },
+      {
+        "brand": "Paddy",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Passport",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Pig's Nose",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Pinwinnie Royale",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Port Charlotte",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Redbreast",
+        "level": "Premium/Prestige",
+        "weight": 1.0
+      },
+      {
+        "brand": "Rittenhouse Rye",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Roe & Co",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Royal Brackla",
+        "level": "Premium/Prestige",
+        "weight": 1.0
+      },
+      {
+        "brand": "Rozelieures",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Sazerac Rye",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Scapa",
+        "level": "Premium/Prestige",
+        "weight": 1.0
+      },
+      {
+        "brand": "Scottish Leader",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Sexton",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Slane",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Smokehead",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Speyburn",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Springbank",
+        "level": "Premium/Prestige",
+        "weight": 1.0
+      },
+      {
+        "brand": "St Georges",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Suntory Whisky",
+        "level": "Prestige",
+        "weight": 1.0
+      },
+      {
+        "brand": "Taketsuru",
+        "level": "Prestige",
+        "weight": 1.0
+      },
+      {
+        "brand": "Talisker",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Tamdhu",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Teacher's",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Teeling",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "The Dalmore",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "The Famous Grouse",
+        "level": "Mainstream/Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "The House Suntory",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "The Macallan",
+        "level": "Premium/Prestige",
+        "weight": 1.0
+      },
+      {
+        "brand": "The Naked Malt",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "The Singleton",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Timorous Beastie",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Tobermory",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Toki",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Tokinoka",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Tomatin",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Tormore",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Tullamore D.E.W.",
+        "level": "Mainstream/Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Tullibardine",
+        "level": "Premium/Prestige",
+        "weight": 1.0
+      },
+      {
+        "brand": "Tyrconnell",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Weller",
+        "level": "Prestige",
+        "weight": 1.0
+      },
+      {
+        "brand": "Westland",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Whyte & Mackay",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Wild Turkey",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Wild Weasel",
+        "level": "Mainstream/Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "William Lawson's",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "William Peel",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Woodford Reserve",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Yamazaki",
+        "level": "Super Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Aimé Roquesante",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Barefoot",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Belle Enseigne",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Bolla",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Boschendal",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Caillou",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Cloudy Bay",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Corvo",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Croix d'Or",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Domaine Roulot",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Hubert Brochard",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Il Cigno",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Jermann",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Lavila",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Liebfraumilch",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Meneau",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Pieropan",
+        "level": "Premium",
+        "weight": 1.0
+      },
+      {
+        "brand": "Rivaner",
+        "level": "Mainstream",
+        "weight": 1.0
+      },
+      {
+        "brand": "Saint Clair",
+        "level": "Premium",
+        "weight": 1.0
+      }
+    ]
+  },
+  "segment_path_fields": [
+    "market_segment_type0",
+    "market_segment_type1",
+    "market_segment_type2",
+    "market_segment_type3"
+  ],
+  "scoring": {
+    "weights": {
+      "brand_index": 0.6,
+      "ticket_index": 0.3,
+      "segment_factor": 0.1
+    },
+    "segment_factor": {
+      "default_multiplier": 1.0,
+      "rules": [
+        {
+          "segment_prefix": "horeca > table_service",
+          "multiplier": 1.05
+        },
+        {
+          "segment_prefix": "horeca > fast_food",
+          "multiplier": 0.95
+        }
+      ]
+    }
+  },
+  "ticket_rules": {
+    "guest_count_missing_default": 1
+  },
+  "thresholds": {
+    "mainstream_max": 1.65,
+    "premium_max": 2.35
+  },
+  "output": {
+    "top_brands_to_return": 10
+  }
+}

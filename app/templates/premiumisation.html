@@ -1,0 +1,237 @@
+{% extends "base.html" %}
+{% set active = 'premium' %}
+
+{% block content %}
+<div class="d-flex align-items-center justify-content-between mb-3">
+  <div>
+    <h3 class="mb-0">Premiumisation</h3>
+    <div class="text-muted">Configure premium scoring per country and score outlets via BigQuery.</div>
+  </div>
+</div>
+
+<div class="row g-3">
+  <div class="col-lg-6">
+    <div class="card shadow-sm">
+      <div class="card-body">
+        <h5 class="card-title">1) Profile (JSON)</h5>
+        <form id="profileForm" class="mb-3">
+          <label class="form-label">Country</label>
+          <select class="form-select" name="country" id="countrySelect">
+            {% for c in countries %}
+              <option value="{{c.code}}" {% if c.code==selected_country %}selected{% endif %}>{{c.code}} — {{c.label}}</option>
+            {% endfor %}
+          </select>
+          <label class="form-label mt-3">Profile JSON</label>
+          <textarea class="form-control mono" name="profile_json" id="profileJson" placeholder='{"profile_id":"FR_v1","country_iso2":"FR",...}'>{{ profile_json }}</textarea>
+          <div class="d-flex gap-2 mt-3">
+            <button class="btn btn-primary" type="submit">Save profile</button>
+            <button class="btn btn-outline-secondary" type="button" id="reloadProfile">Reload from DB</button>
+          </div>
+          <div class="small text-muted mt-2">Tip: keep one profile per country (profile_id is used as unique key).</div>
+        </form>
+
+        <hr>
+
+        <h6>Import profile JSON file</h6>
+        <form id="importForm">
+          <input class="form-control" type="file" name="file" accept="application/json">
+          <button class="btn btn-outline-primary mt-2" type="submit">Import</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-lg-6">
+    <div class="card shadow-sm mb-3">
+      <div class="card-body">
+        <h5 class="card-title">2) Ticket percentiles (optional but recommended)</h5>
+        <div class="small text-muted">Computed from BigQuery: percentiles of ticket value by segment path, plus a country fallback.</div>
+        <form id="pctForm" class="row g-2 align-items-end mt-2">
+          <div class="col-md-4">
+            <label class="form-label">Country</label>
+            <input class="form-control" name="country" id="pctCountry" value="{{selected_country}}">
+          </div>
+          <div class="col-md-4">
+            <label class="form-label">Date start</label>
+            <input class="form-control" type="date" name="date_start" required>
+          </div>
+          <div class="col-md-4">
+            <label class="form-label">Date end</label>
+            <input class="form-control" type="date" name="date_end" required>
+          </div>
+          <div class="col-12">
+            <button class="btn btn-outline-primary" type="submit">Recompute percentiles</button>
+          </div>
+        </form>
+
+        <div class="mt-3">
+          <h6 class="mb-2">Current stored percentiles</h6>
+          <div class="table-responsive" style="max-height: 240px; overflow:auto;">
+            <table class="table table-sm table-striped">
+              <thead>
+                <tr>
+                  <th>segment_key</th>
+                  <th class="text-end">p50</th>
+                  <th class="text-end">p80</th>
+                  <th class="text-end">p95</th>
+                </tr>
+              </thead>
+              <tbody>
+                {% for r in percentiles %}
+                <tr>
+                  <td class="mono">{{r.segment_key}}</td>
+                  <td class="text-end">{{"%.2f"|format(r.p50)}}</td>
+                  <td class="text-end">{{"%.2f"|format(r.p80)}}</td>
+                  <td class="text-end">{{"%.2f"|format(r.p95)}}</td>
+                </tr>
+                {% endfor %}
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card shadow-sm">
+      <div class="card-body">
+        <h5 class="card-title">3) Score outlets</h5>
+
+        <ul class="nav nav-tabs" id="scoreTabs" role="tablist">
+          <li class="nav-item" role="presentation">
+            <button class="nav-link active" id="outlets-tab" data-bs-toggle="tab" data-bs-target="#outlets" type="button" role="tab">By outlet IDs</button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button class="nav-link" id="country-tab" data-bs-toggle="tab" data-bs-target="#country" type="button" role="tab">By country</button>
+          </li>
+        </ul>
+
+        <div class="tab-content pt-3">
+          <div class="tab-pane fade show active" id="outlets" role="tabpanel">
+            <form id="scoreOutletsForm" class="row g-2 align-items-end">
+              <div class="col-12">
+                <label class="form-label">Outlet fyre_id list (comma or newline)</label>
+                <textarea class="form-control mono" name="fyre_ids" rows="3" placeholder="FR0329129802, FR..." required></textarea>
+              </div>
+              <div class="col-md-6">
+                <label class="form-label">Date start</label>
+                <input class="form-control" type="date" name="date_start" required>
+              </div>
+              <div class="col-md-6">
+                <label class="form-label">Date end</label>
+                <input class="form-control" type="date" name="date_end" required>
+              </div>
+              <div class="col-12">
+                <button class="btn btn-success" type="submit">Score</button>
+              </div>
+            </form>
+          </div>
+
+          <div class="tab-pane fade" id="country" role="tabpanel">
+            <form id="scoreCountryForm" class="row g-2 align-items-end">
+              <div class="col-md-4">
+                <label class="form-label">Country</label>
+                <input class="form-control" name="country" value="{{selected_country}}" required>
+              </div>
+              <div class="col-md-4">
+                <label class="form-label">Date start</label>
+                <input class="form-control" type="date" name="date_start" required>
+              </div>
+              <div class="col-md-4">
+                <label class="form-label">Date end</label>
+                <input class="form-control" type="date" name="date_end" required>
+              </div>
+              <div class="col-12">
+                <button class="btn btn-success" type="submit">Score (country)</button>
+              </div>
+            </form>
+          </div>
+        </div>
+
+        <hr>
+
+        <h6>Result</h6>
+        <pre class="mono bg-light p-3 rounded" id="resultBox" style="max-height: 280px; overflow:auto;">{}</pre>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+function jsonPretty(x){
+  try { return JSON.stringify(x, null, 2); } catch(e) { return String(x); }
+}
+
+async function postForm(url, formEl){
+  const fd = new FormData(formEl);
+  const r = await fetch(url, { method: 'POST', body: fd });
+  const t = await r.text();
+  try { return JSON.parse(t); } catch(e) { return { raw: t, status: r.status }; }
+}
+
+async function postJson(url, obj){
+  const r = await fetch(url, { method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify(obj) });
+  const t = await r.text();
+  try { return JSON.parse(t); } catch(e) { return { raw: t, status: r.status }; }
+}
+
+const resultBox = document.getElementById('resultBox');
+
+document.getElementById('profileForm').addEventListener('submit', async (e) => {
+  e.preventDefault();
+  const country = document.getElementById('countrySelect').value;
+  const profile_json = document.getElementById('profileJson').value;
+  const fd = new FormData();
+  fd.append('country', country);
+  fd.append('profile_json', profile_json);
+  const r = await fetch('/premiumisation/api/profile/save', { method:'POST', body: fd });
+  resultBox.textContent = await r.text();
+});
+
+document.getElementById('reloadProfile').addEventListener('click', async () => {
+  const cc = document.getElementById('countrySelect').value;
+  const r = await fetch('/premiumisation/api/profile?country=' + encodeURIComponent(cc));
+  const j = await r.json();
+  document.getElementById('profileJson').value = j.profile ? jsonPretty(j.profile) : '';
+  resultBox.textContent = jsonPretty(j);
+});
+
+document.getElementById('importForm').addEventListener('submit', async (e) => {
+  e.preventDefault();
+  const r = await postForm('/premiumisation/api/profile/import', e.target);
+  resultBox.textContent = jsonPretty(r);
+});
+
+document.getElementById('pctForm').addEventListener('submit', async (e) => {
+  e.preventDefault();
+  const r = await postJson('/premiumisation/api/percentiles/recompute', {
+    country: e.target.country.value,
+    date_start: e.target.date_start.value,
+    date_end: e.target.date_end.value,
+  });
+  resultBox.textContent = jsonPretty(r) + "\n\nReload the page to see updated percentiles list.";
+});
+
+document.getElementById('scoreOutletsForm').addEventListener('submit', async (e) => {
+  e.preventDefault();
+  const raw = e.target.fyre_ids.value;
+  const fyre_ids = raw.split(/[\n,;\t ]+/).map(x=>x.trim()).filter(Boolean);
+  const r = await postJson('/premiumisation/api/score/by-outlets', {
+    fyre_ids,
+    date_start: e.target.date_start.value,
+    date_end: e.target.date_end.value,
+  });
+  resultBox.textContent = jsonPretty(r);
+});
+
+document.getElementById('scoreCountryForm').addEventListener('submit', async (e) => {
+  e.preventDefault();
+  const r = await postJson('/premiumisation/api/score/by-country', {
+    country: e.target.country.value,
+    date_start: e.target.date_start.value,
+    date_end: e.target.date_end.value,
+  });
+  resultBox.textContent = jsonPretty(r);
+});
+
+</script>
+{% endblock %}
